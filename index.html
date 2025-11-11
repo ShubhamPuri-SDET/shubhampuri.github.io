@@ -792,7 +792,6 @@
   padding-left: 1.5rem;
   position: relative;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  font-size: 0.9rem;
 }
 
 .project-card li::before {
@@ -956,6 +955,312 @@
   .tech-tag {
     padding: 2px 8px;
     font-size: 0.65rem;
+  }
+}
+
+/* ENHANCED CONTACT CTA BUTTONS */
+#contact .contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#contact .btn {
+  overflow: visible;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #021124;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: all 0.35s ease;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+}
+
+/* Remove pseudo-element rules for #contact .btn (::before, ::after) */
+
+/* Reuse pulseGlow animation (already defined above) */
+#contact .btn {
+  animation-name: slideInContact, pulseGlow;
+  animation-duration: 0.7s, 2.8s;
+  animation-timing-function: cubic-bezier(0.34,1.56,0.64,1), ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s, 1.4s;
+  animation-iteration-count: 1, infinite;
+}
+
+/* Hover: lift and pause pulse */
+#contact .btn:hover {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 14px 40px rgba(6, 182, 212, 0.6);
+  animation-play-state: paused;
+}
+
+/* MESSAGE BOX STYLING */
+.message-box {
+  margin-top: 28px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInMessage 0.8s ease-out 1.2s forwards;
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+textarea#messageText {
+  width: 90%;
+  max-width: 680px;
+  height: 130px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e6eef8;
+  resize: none;
+  outline: none;
+  font-family: Poppins, system-ui, Arial;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+textarea#messageText::placeholder {
+  color: #9fb0c6;
+}
+
+textarea#messageText:focus {
+  border: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.05);
+  transform: scale(1.02);
+}
+
+/* Send button inside message box */
+.message-box .btn {
+  margin-top: 12px;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  animation: fadeInMessage 0.8s ease-out 1.35s forwards;
+}
+
+.message-box .btn:hover {
+  transform: translateY(-6px) scale(1.08);
+}
+
+/* FORCE CTAs VISIBLE (override hidden/animation states) */
+.hero-buttons .btn,
+#contact .btn,
+.message-box .btn,
+#hireMe,
+#backToTop {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  animation: none !important;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+/* keep hover effects working */
+.hero-buttons .btn:hover,
+#contact .btn:hover,
+.message-box .btn:hover,
+#hireMe:hover,
+#backToTop:hover {
+  animation-play-state: paused !important;
+}
+
+/* Thank-you modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(96, 165, 250, 0.05));
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 40px;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 60px rgba(6, 182, 212, 0.3), 0 0 100px rgba(96, 165, 250, 0.2);
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  animation: modalPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6) rotateY(-10deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05) rotateY(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+}
+
+.modal-content {
+  position: relative;
+  z-index: 2001;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Success icon animation */
+.success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.modal h3 {
+  color: var(--accent-2);
+  font-size: 1.5rem;
+  margin: 16px 0 10px 0;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.modal p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 10px 0 24px 0;
+}
+
+/* Modal action buttons */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #021124;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: visible;
+}
+
+.modal-actions .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+}
+
+.modal-actions .btn:active {
+  transform: translateY(-1px);
+}
+
+/* Closing animation */
+.modal.hide {
+  animation: modalFadeOut 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8) translateY(20px);
+  }
+}
+
+/* Responsive modal */
+@media (max-width: 480px) {
+  .modal {
+    padding: 30px 20px;
+    max-width: 95%;
+  }
+
+  .success-icon {
+    font-size: 2.8rem;
+  }
+
+  .modal h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal p {
+    font-size: 0.9rem;
+  }
+
+  .modal-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 }
   </style>
@@ -1219,8 +1524,12 @@
       <h2>Contact Me</h2>
       <p style="text-align:center;color:var(--muted);">Let’s connect — open to roles and collaborations.</p>
       <div class="contact-buttons">
-        <a class="btn" href="mailto:spuri4867@gmail.com">📧 Email Shubham</a>
-        <a class="btn" href="tel:+917620231894">📞 Call / WhatsApp</a>
+        <a class="btn" href="mailto:spuri4867@gmail.com" title="Email Me">
+          <span>📧 Email Shubham</span>
+        </a>
+        <a class="btn" href="tel:+917620231894" title="Call Me">
+          <span>📞 Call / WhatsApp</span>
+        </a>
       </div>
 
       <div class="message-box">
@@ -1252,15 +1561,18 @@
 
   <!-- Thank-you modal -->
   <div class="modal" id="thankModal" aria-hidden="true">
-    <div class="card">
-      <div class="success">✅</div>
-      <h3>Thanks — message sent!</h3>
-      <p>I’ll get back to you soon. ✨</p>
-      <div style="margin-top:16px;">
+    <div class="modal-content">
+      <div class="success-icon">✅</div>
+      <h3>Thanks for reaching out!</h3>
+      <p>Your message is on its way. I'll get back to you soon. ✨</p>
+      <div class="modal-actions">
         <button class="btn" id="closeModal">Close</button>
       </div>
     </div>
   </div>
+
+  <!-- Modal overlay backdrop -->
+  <div class="modal-overlay" id="modalOverlay"></div>
 
   <footer style="text-align:center; padding:28px 12px; color:var(--muted);">
     © 2025 Shubham Puri • Senior Software Test Engineer • Pune, India
