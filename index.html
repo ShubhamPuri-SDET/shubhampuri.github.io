@@ -63,6 +63,58 @@
   body.theme-light header h1 { -webkit-text-fill-color: unset; color: transparent; background-clip: text; -webkit-background-clip: text; }
   body.theme-light .tagline { color: var(--muted) !important; }
 
+
+
+  /* 🌞 Enhanced Light Theme — better contrast, readability & depth */
+body.theme-light {
+  --bg: #f8fafc;                /* Slightly blue-tinted white */
+  --card-bg: #ffffff;
+  --text: #0b1220;
+  --muted: #475569;
+  --accent: #0284c7;
+  --accent-2: #2563eb;
+  --border: rgba(30, 64, 175, 0.12);
+  --soft-shadow: 0 8px 22px rgba(30, 64, 175, 0.08);
+  color: var(--text);
+}
+
+
+/* Global text */
+body.theme-light p,
+body.theme-light li,
+body.theme-light span {
+  color: var(--muted);
+}
+
+/* Light mode header contrast fix */
+body.theme-light .card h3 {
+  color: #1e3a8a; /* deep blue for readability */
+  text-shadow: 0 0 6px rgba(59, 130, 246, 0.15);
+}
+body.theme-light .card:hover h3 {
+  color: #2563eb; /* vibrant accent blue */
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+}
+/* Cards */
+body.theme-light .card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.08);
+}
+body.theme-light .card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.2), inset 0 0 20px rgba(14, 165, 233, 0.05);
+}
+
+/* Smooth transition for theme toggle */
+html, body, .card, .btn, header, section {
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+
+
+
   /* THEME TOGGLE BUTTON */
   .theme-toggle {
     position: absolute;
