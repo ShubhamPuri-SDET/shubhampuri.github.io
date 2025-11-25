@@ -38,35 +38,35 @@ const Pricing: React.FC = () => {
         />
 
         {/* Trust Badges */}
-        <div className="py-12 bg-primary-50 dark:bg-primary-900/10">
+        <div className="py-8 sm:py-12 bg-primary-50 dark:bg-primary-900/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              <div className="flex items-center gap-3 justify-center">
-                <Shield className="h-8 w-8 text-primary-600 dark:text-primary-400" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+              <div className="flex items-center gap-2 sm:gap-3 justify-center p-3 sm:p-0">
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-primary-600 dark:text-primary-400 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold text-foreground">100% Secure</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">Payment Protection</div>
+                  <div className="font-semibold text-sm sm:text-base text-foreground">100% Secure</div>
+                  <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Payment Protection</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 justify-center">
-                <Clock className="h-8 w-8 text-primary-600 dark:text-primary-400" />
+              <div className="flex items-center gap-2 sm:gap-3 justify-center p-3 sm:p-0">
+                <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary-600 dark:text-primary-400 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold text-foreground">Fast Delivery</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">On-Time Guarantee</div>
+                  <div className="font-semibold text-sm sm:text-base text-foreground">Fast Delivery</div>
+                  <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">On-Time Guarantee</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 justify-center">
-                <Award className="h-8 w-8 text-primary-600 dark:text-primary-400" />
+              <div className="flex items-center gap-2 sm:gap-3 justify-center p-3 sm:p-0">
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-primary-600 dark:text-primary-400 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold text-foreground">Quality Work</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">Professional Results</div>
+                  <div className="font-semibold text-sm sm:text-base text-foreground">Quality Work</div>
+                  <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Professional Results</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 justify-center">
-                <Check className="h-8 w-8 text-green-600" />
+              <div className="flex items-center gap-2 sm:gap-3 justify-center p-3 sm:p-0">
+                <Check className="h-6 w-6 sm:h-8 sm:w-8 text-green-600 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold text-foreground">Satisfaction</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">Money-Back Guarantee</div>
+                  <div className="font-semibold text-sm sm:text-base text-foreground">Satisfaction</div>
+                  <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Money-Back Guarantee</div>
                 </div>
               </div>
             </div>

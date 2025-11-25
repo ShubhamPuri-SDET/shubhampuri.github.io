@@ -15,9 +15,73 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mobile-optimized touch targets */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Mobile-first spacing utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .mobile-section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Touch-friendly buttons */
+  .btn-mobile {
+    @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+  }
+
+  /* Mobile-optimized cards */
+  .card-mobile {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  /* Smooth transitions for mobile */
+  .mobile-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mobile-friendly text sizes */
+  .text-mobile-h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+
+  .text-mobile-h2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+
+  .text-mobile-h3 {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+
+  .text-mobile-body {
+    @apply text-base sm:text-lg;
   }
 }
