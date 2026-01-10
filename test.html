@@ -1,32 +1,37 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title>Shubham Puri — SDET | Automation & QA</title>
-      <meta name="description" content="Shubham Puri — Senior Software Test Engineer with 4+ years of automation experience." />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-      <style>
-        /* THEME / TOGGLE STYLES (paste near top of your <style>) */
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shubham Puri — SDET | Automation & QA</title>
+  <meta name="description"
+    content="Shubham Puri — Senior Software Test Engineer with 4+ years of automation experience." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* THEME / TOGGLE STYLES (paste near top of your <style>) */
     :root {
-      --bg-dark: linear-gradient(180deg,#071028 0%,#071829 60%);
-      --bg-light: linear-gradient(180deg,#f8fbff 0%,#eaf6ff 60%);
+
+      --bg-dark: linear-gradient(180deg, #1e293b 0%, #334155 60%);
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --text-dark: #f1f5f9;
+      --soft-shadow-dark: 0 2px 15px rgba(0, 0, 0, 0.15);
+      --bg-dark: linear-gradient(180deg, #071028 0%, #071829 60%);
+      --bg-light: linear-gradient(180deg, #f8fbff 0%, #eaf6ff 60%);
       --bg: var(--bg-dark);
-      --muted:#9aa6bd;
-      --accent:#06b6d4;
-      --accent-2:#60a5fa;
-      --radius:14px;
-      --max-width:1100px;
-      --card-bg: rgba(255,255,255,0.04);
-      --text-dark: #e6eef8;
+      --muted: #9aa6bd;
+      --accent: #3b82f6;
+      --accent-2: #60a5fa;
+      --radius: 14px;
+      --max-width: 1100px;
       --text-light: #0b1220;
-      --soft-shadow-dark: 0 8px 40px rgba(2,6,23,0.6);
-      --soft-shadow-light: 0 8px 30px rgba(14,165,233,0.06);
+      --soft-shadow-light: 0 8px 30px rgba(14, 165, 233, 0.06);
     }
 
     /* base uses --bg and --text variables */
-    html, body {
+    html,
+    body {
       background: var(--bg);
       color: var(--text-dark);
       transition: background 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
@@ -43,7 +48,10 @@
     }
 
     /* ensure dark default text variable */
-    body:not(.theme-light) { --text: var(--text-dark); --soft-shadow: var(--soft-shadow-dark); }
+    body:not(.theme-light) {
+      --text: var(--text-dark);
+      --soft-shadow: var(--soft-shadow-dark);
+    }
 
     /* Override containers for readability in light theme */
     body.theme-light header.hero,
@@ -54,62 +62,84 @@
     body.theme-light .modal {
       background: var(--card-bg) !important;
       color: var(--text) !important;
-      border-color: rgba(6,182,212,0.08) !important;
+      border-color: rgba(6, 182, 212, 0.08) !important;
       box-shadow: var(--soft-shadow) !important;
     }
 
     /* nav links & hero heading contrast */
-    body.theme-light nav a { color: var(--text) !important; }
-    body.theme-light header h1 { -webkit-text-fill-color: unset; color: transparent; background-clip: text; -webkit-background-clip: text; }
-    body.theme-light .tagline { color: var(--muted) !important; }
+    body.theme-light nav a {
+      color: var(--text) !important;
+    }
+
+    body.theme-light header h1 {
+      -webkit-text-fill-color: unset;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    body.theme-light .tagline {
+      color: var(--muted) !important;
+    }
 
 
 
     /* 🌞 Enhanced Light Theme — better contrast, readability & depth */
-  body.theme-light {
-    --bg: #f8fafc;                /* Slightly blue-tinted white */
-    --card-bg: #ffffff;
-    --text: #0b1220;
-    --muted: #475569;
-    --accent: #0284c7;
-    --accent-2: #2563eb;
-    --border: rgba(30, 64, 175, 0.12);
-    --soft-shadow: 0 8px 22px rgba(30, 64, 175, 0.08);
-    color: var(--text);
-  }
+    body.theme-light {
+      --bg: #f8fafc;
+      /* Slightly blue-tinted white */
+      --card-bg: #ffffff;
+      --text: #0b1220;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-2: #2563eb;
+      --border: rgba(30, 64, 175, 0.12);
+      --soft-shadow: 0 8px 22px rgba(30, 64, 175, 0.08);
+      color: var(--text);
+    }
 
 
-  /* Global text */
-  body.theme-light p,
-  body.theme-light li,
-  body.theme-light span {
-    color: var(--muted);
-  }
+    /* Global text */
+    body.theme-light p,
+    body.theme-light li,
+    body.theme-light span {
+      color: var(--muted);
+    }
 
-  /* Light mode header contrast fix */
-  body.theme-light .card h3 {
-    color: #1e3a8a; /* deep blue for readability */
-    text-shadow: 0 0 6px rgba(59, 130, 246, 0.15);
-  }
-  body.theme-light .card:hover h3 {
-    color: #2563eb; /* vibrant accent blue */
-    text-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
-  }
-  /* Cards */
-  body.theme-light .card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(14, 165, 233, 0.1);
-    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.08);
-  }
-  body.theme-light .card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.2), inset 0 0 20px rgba(14, 165, 233, 0.05);
-  }
+    /* Light mode header contrast fix */
+    body.theme-light .card h3 {
+      color: #1e3a8a;
+      /* deep blue for readability */
+      text-shadow: 0 0 6px rgba(59, 130, 246, 0.15);
+    }
 
-  /* Smooth transition for theme toggle */
-  html, body, .card, .btn, header, section {
-    transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-  }
+    body.theme-light .card:hover h3 {
+      color: #2563eb;
+      /* vibrant accent blue */
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+    }
+
+    /* Cards */
+    body.theme-light .card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(14, 165, 233, 0.1);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.08);
+    }
+
+    body.theme-light .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.2), inset 0 0 20px rgba(14, 165, 233, 0.05);
+    }
+
+    /* Smooth transition for theme toggle */
+    html,
+    body,
+    .card,
+    .btn,
+    header,
+    section {
+      transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    }
 
 
 
@@ -125,916 +155,1207 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width:42px;
-      height:34px;
-      padding:6px;
-      border-radius:999px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      width: 42px;
+      height: 34px;
+      padding: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
       color: var(--text);
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.155);
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
     }
 
     /* Hover / focus */
-    .theme-toggle:hover { transform: translateY(-50%) scale(1.05); box-shadow: 0 12px 30px rgba(2,6,23,0.55); }
-    .theme-toggle:focus { outline: 2px solid rgba(96,165,250,0.2); outline-offset: 3px; }
+    .theme-toggle:hover {
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 12px 30px rgba(2, 6, 23, 0.55);
+    }
+
+    .theme-toggle:focus {
+      outline: 2px solid rgba(96, 165, 250, 0.2);
+      outline-offset: 3px;
+    }
 
     /* icon */
-    .theme-icon { font-size:16px; line-height:1; }
+    .theme-icon {
+      font-size: 16px;
+      line-height: 1;
+    }
 
     /* keep toggle visible on small screens */
     @media (max-width:480px) {
-      .theme-toggle { right:10px; width:38px; height:32px; }
+      .theme-toggle {
+        right: 10px;
+        width: 38px;
+        height: 32px;
+      }
     }
 
-        :root {
-          --bg:#0f1724; --muted:#9aa6bd; --accent:#06b6d4; --accent-2:#60a5fa; --radius:14px; --max-width:1100px;
-        }
-        html,body {height:100%; margin:0; font-family:Poppins,system-ui,Arial; background:linear-gradient(180deg,#071028 0%,#071829 60%); color:#e6eef8; scroll-behavior:smooth;}
-        .wrap {max-width:var(--max-width); margin:0 auto; padding:24px;}
-
-        /* NAV */
-        nav.navbar {position:fixed; top:0; left:0; width:100%; background:rgba(7,12,22,0.85); backdrop-filter:blur(8px); padding:10px 0; z-index:1200; box-shadow:0 2px 12px rgba(0,0,0,0.4);}
-        nav .nav-links {text-align:center;}
-        nav a {color:#e6eef8; margin:0 14px; font-weight:600; text-decoration:none; transition:color .2s, transform .15s;}
-        nav a:hover {color:var(--accent); transform:translateY(-3px);}
-
-        /* Scroll progress */
-        #scroll-progress {position:fixed; top:0; left:0; height:4px; width:0; z-index:1300; background:linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 0 12px var(--accent);}
-
-        /* HERO */
-        header.hero {margin-top:70px; text-align:center; padding:36px;border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); box-shadow:0 8px 40px rgba(2,6,23,0.6); position:relative; overflow:hidden;}
-        /* soft gradient glow behind name */
-        .hero::after {
-          content:"";
-          position:absolute; inset:-20% -10% auto -10%; height:300px; filter:blur(80px); opacity:0.12;
-          background: radial-gradient(600px 200px at 50% 20%, var(--accent-2), transparent 30%);
-          transform:translateY(-10px);
-          pointer-events:none;
-        }
-        header h1 {
-          background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent));
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradientShift 4s ease infinite;
-          font-size:34px; margin:0 0 6px 0; letter-spacing:0.2px;
-        }
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .role {font-weight:700; color:var(--accent-2); margin-bottom:6px;}
-        .tagline {
-          background: linear-gradient(90deg, var(--muted), var(--accent));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          color:var(--muted); margin-bottom:18px;
-        }
-
-        /* buttons in hero (staggered) */
-        .hero-buttons {display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px;}
-        .hero-buttons .btn {
-          background:linear-gradient(90deg,var(--accent),var(--accent-2));
-          color:#021124; padding:10px 14px; border-radius:10px; border:none; cursor:pointer;
-          font-weight:700; text-transform:uppercase; letter-spacing:0.6px; opacity:0; transform:translateY(20px);
-          transition:transform .25s ease, box-shadow .2s ease, opacity .3s;
-          position: relative;
-          overflow: hidden;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          padding: 12px 20px;
-          font-size: 0.95rem;
-          box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
-        }
-
-        /* stagger delays */
-        .hero-buttons .btn:nth-child(1){animation:fadeInUp .7s .9s forwards;}
-        .hero-buttons .btn:nth-child(2){animation:fadeInUp .7s 1.05s forwards;}
-        .hero-buttons .btn:nth-child(3){animation:fadeInUp .7s 1.2s forwards;}
-        .hero-buttons .btn:nth-child(4){animation:fadeInUp .7s 1.35s forwards;}
-
-        /* Remove underline animation */
-        .resume-btn { position:relative; overflow:hidden; }
-        .resume-btn::after { display: none; }
-
-        /* Enhanced hover effect for hero buttons */
-        .hero-buttons .btn:hover {
-          transform: translateY(-4px) scale(1.05);
-          box-shadow: 0 12px 30px rgba(6, 182, 212, 0.45);
-        }
-
-        .hero-buttons .btn::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.15);
-          transform: translate(-50%, -50%);
-          transition: width 0.5s ease, height 0.5s ease;
-        }
-
-        .hero-buttons .btn:hover::before {
-          width: 300px;
-          height: 300px;
-        }
-
-        /* Shimmer effect on hover */
-        .hero-buttons .btn::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.5s ease;
-          pointer-events: none;
-        }
-
-        .hero-buttons .btn:hover::after {
-          left: 100%;
-        }
-
-        @keyframes fadeInUp {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-
-        /* resume underline animation */
-        .resume-btn { position:relative; overflow:hidden; }
-        .resume-btn::after { content:''; position:absolute; left:0; bottom:0; width:100%; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transform:scaleX(0); transform-origin:right; transition:transform .35s ease; }
-        .resume-btn:hover::after { transform:scaleX(1); transform-origin:left; }
-
-        /* chevron */
-        .scroll-chevron { margin-top:18px; font-size:26px; color:var(--accent-2); display:inline-block; cursor:pointer; animation:bounceChevron 2.2s infinite; opacity:0.95; }
-        @keyframes bounceChevron {0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)}}
-
-        /* sections */
-        section {margin:56px 0; padding:28px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease;}
-        section.visible {opacity:1; transform:translateY(0);}
-        section h2 {
-          color:var(--accent-2); margin-top:0; text-align:center; letter-spacing:0.6px; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;
-          position: relative;
-          text-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
-          filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.3));
-        }
-        section h2.visible {opacity:1; transform:translateY(0);}
-        section h2::before {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80%;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, var(--accent), transparent);
-          opacity: 0.5;
-        }
-
-        /* underline for section titles */
-        section h2::after {content:'';display:block;height:3px;width:60%;margin:10px auto 0;background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:3px;}
-
-        /* grid & cards */
-        .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin-top:20px;}
-        .card {
-          background:rgba(255,255,255,0.04); padding:18px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); opacity:0; transform:translateY(20px); transition:transform .4s ease, box-shadow .28s ease, opacity .6s;
-          position: relative;
-          box-shadow: 0 0 20px rgba(6, 182, 212, 0);
-          transition: box-shadow 0.4s ease, border-color 0.4s ease;
-          border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-        .card.visible {opacity:1; transform:translateY(0);}
-        .card h3 {
-          color:var(--accent-2); margin-bottom:8px;
-          position: relative;
-          transition: all 0.3s ease;
-        }
-        .card:hover h3 {
-          color: var(--accent);
-          text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
-        }
-        .card ul{list-style:none;padding-left:0;margin:0;}
-        .card li {
-          padding-left:1.2rem; margin-bottom:8px; position:relative;
-          transition: all 0.3s ease;
-          padding-left: 1.5rem;
-        }
-        .card li:hover {
-          transform: translateX(5px);
-          color: var(--accent);
-        }
-        .card li::before {
-          content:'✔'; position:absolute; left:0; color:#4caf50; font-weight:700;
-          transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .card li:hover::before {
-          transform: scale(1.3) rotate(360deg);
-          color: var(--accent-2);
-        }
-
-        .card:hover {
-          border-color: var(--accent);
-          box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05);
-        }
-
-        /* CERTIFICATIONS STYLING */
-        .cert-card {
-          position: relative;
-          overflow: hidden;
-          border: 2px solid var(--accent) !important;
-          background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(96, 165, 250, 0.05)) !important;
-          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cert-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 3px;
-          background: linear-gradient(90deg, var(--accent), var(--accent-2));
-          transition: left 0.35s ease;
-        }
-
-        .cert-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);
-          background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(96, 165, 250, 0.08)) !important;
-        }
-
-        .cert-card:hover::before {
-          left: 100%;
-        }
-
-        .cert-icon {
-          font-size: 2.8rem;
-          margin-bottom: 1.2rem;
-          display: inline-block;
-          animation: iconFloat 0.6s ease-out;
-        }
-
-        @keyframes iconFloat {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .cert-card h3 {
-          color: var(--accent-2) !important;
-          font-weight: 700;
-          margin: 1rem 0 0.8rem 0;
-          letter-spacing: 0.3px;
-        }
-
-        .cert-card ul li::before {
-          content: '★';
-          color: var(--accent);
-          font-weight: bold;
-        }
-
-        .cert-card:hover h3 {
-          text-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
-        }
-
-  /* Centered Message Box + Glowing CTA */
-  .message-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  .message-box textarea {
-    width: 100%;
-    max-width: 600px;
-    height: 120px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    resize: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: #e6eef8;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.02);
-    transition: all 0.3s ease;
-  }
-
-  .message-box textarea:focus {
-    box-shadow: 0 0 25px rgba(6, 182, 212, 0.45), inset 0 0 15px rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(6, 182, 212, 0.4);
-  }
-
-  .message-box textarea::placeholder {
-    color: #aab6d3;
-  }
-
-  /* Send Message Button — same CTA style */
-  #sendMsgBtn {
-    margin-top: 14px;
-    padding: 12px 24px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #36c0f7, #1e90ff);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Hover shimmer + glow */
-  #sendMsgBtn:hover {
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 40px rgba(30, 144, 255, 0.4);
-  }
-
-  #sendMsgBtn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-20deg);
-    transition: left 0.8s ease;
-  }
-
-  #sendMsgBtn:hover::before {
-    left: 130%;
-  }
-
-  /* Icon glow animation */
-  #sendMsgBtn .icon svg {
-    stroke: #fff;
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease, stroke 0.3s ease;
-  }
-
-  #sendMsgBtn:hover .icon svg {
-    transform: scale(1.2) rotate(5deg);
-    stroke: #f8fbff;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .message-box textarea {
-      width: 90%;
+    :root {
+      --bg: #0f1724;
+      --muted: #9aa6bd;
+      --accent: #3b82f6;
+      --accent-2: #60a5fa;
+      --radius: 14px;
+      --max-width: 1100px;
     }
-  }
 
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Poppins, system-ui, Arial;
+      background: linear-gradient(180deg, #071028 0%, #071829 60%);
+      color: #e6eef8;
+      scroll-behavior: smooth;
+    }
 
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+    }
 
-  /* CONTACT CTA BUTTONS — Gradient + Glow */
-  .contact-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
+    /* NAV */
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(7, 12, 22, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+      z-index: 1200;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    }
 
-  .contact-buttons .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #3acdf8, #1e90ff);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    text-decoration: none;
-    box-shadow: 0 0 20px rgba(30, 144, 255, 0.25);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
+    nav .nav-links {
+      text-align: center;
+    }
 
-  /* No underline hover */
-  .contact-buttons .btn::after {
-    display: none;
-  }
+    nav a {
+      color: #e6eef8;
+      margin: 0 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s, transform .15s;
+    }
 
-  /* Hover glow effect */
-  .contact-buttons .btn:hover {
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 0 25px rgba(6, 182, 212, 0.55), 0 0 40px rgba(30, 144, 255, 0.35);
-  }
+    nav a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
 
-  /* Subtle animated shimmer glow */
-  .contact-buttons .btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-20deg);
-    transition: left 0.8s ease;
-  }
+    /* Scroll progress */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      z-index: 1300;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 12px var(--accent);
+    }
 
-  .contact-buttons .btn:hover::before {
-    left: 130%;
-  }
+    /* HERO */
+    header.hero {
+      margin-top: 70px;
+      text-align: center;
+      padding: 36px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      box-shadow: 0 8px 40px rgba(2, 6, 23, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* SVG ICONS */
-  .contact-buttons .btn .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    /* soft gradient glow behind name */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto -10%;
+      height: 300px;
+      filter: blur(80px);
+      opacity: 0.12;
+      background: radial-gradient(600px 200px at 50% 20%, var(--accent-2), transparent 30%);
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
 
-  .contact-buttons svg {
-    stroke: #fff;
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease, stroke 0.3s ease;
-  }
+    header h1 {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 6s ease infinite;
+      font-size: 34px;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.2px;
+    }
 
-  .contact-buttons .btn:hover svg {
-    transform: scale(1.2) rotate(5deg);
-    stroke: #f8fbff;
-  }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
 
-  /* Message Box CTA Glow */
-  .message-box .btn {
-    margin-top: 12px;
-    background: linear-gradient(135deg, #3acdf8, #1e90ff);
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
-    color: #fff;
-    border: none;
-    transition: all 0.3s ease;
-  }
+      50% {
+        background-position: 100% 50%;
+      }
 
-  .message-box .btn:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
-  }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    .contact-buttons {
+    .role {
+      font-weight: 500;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      background: linear-gradient(90deg, var(--muted), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* buttons in hero (staggered) */
+    .hero-buttons {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .hero-buttons .btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #021124;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform .25s ease, box-shadow .2s ease, opacity .3s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+    }
+
+    /* stagger delays */
+    .hero-buttons .btn:nth-child(1) {
+      animation: fadeInUp .7s .9s forwards;
+    }
+
+    .hero-buttons .btn:nth-child(2) {
+      animation: fadeInUp .7s 1.05s forwards;
+    }
+
+    .hero-buttons .btn:nth-child(3) {
+      animation: fadeInUp .7s 1.2s forwards;
+    }
+
+    .hero-buttons .btn:nth-child(4) {
+      animation: fadeInUp .7s 1.35s forwards;
+    }
+
+    /* Remove underline animation */
+    .resume-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-btn::after {
+      display: none;
+    }
+
+    /* Enhanced hover effect for hero buttons */
+    .hero-buttons .btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(6, 182, 212, 0.155);
+    }
+
+    .hero-buttons .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+
+    .hero-buttons .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Shimmer effect on hover */
+    .hero-buttons .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+      pointer-events: none;
+    }
+
+    .hero-buttons .btn:hover::after {
+      left: 100%;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* resume underline animation */
+    .resume-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-btn::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .35s ease;
+    }
+
+    .resume-btn:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* chevron */
+    .scroll-chevron {
+      margin-top: 18px;
+      font-size: 26px;
+      color: var(--accent-2);
+      display: inline-block;
+      cursor: pointer;
+      animation: bounceChevron 2.2s infinite;
+      opacity: 0.95;
+    }
+
+    @keyframes bounceChevron {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(8px)
+      }
+    }
+
+    /* sections */
+    section {
+      margin: 56px 0;
+      padding: 28px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      color: var(--accent-2);
+      margin-top: 0;
+      text-align: center;
+      letter-spacing: 0.6px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s ease, transform .8s ease;
+      position: relative;
+      text-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+      filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.3));
+    }
+
+    section h2.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.5;
+    }
+
+    /* underline for section titles */
+    section h2::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 60%;
+      margin: 10px auto 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 3px;
+    }
+
+    /* grid & cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform .6s ease, box-shadow .28s ease, opacity .6s;
+      position: relative;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0);
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h3 {
+      color: var(--accent-2);
+      margin-bottom: 8px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover h3 {
+      color: var(--accent);
+      text-shadow: 0 0 12px rgba(6, 182, 212, 0.15);
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .card li {
+      padding-left: 1.2rem;
+      margin-bottom: 8px;
+      position: relative;
+      transition: all 0.3s ease;
+      padding-left: 1.5rem;
+    }
+
+    .card li:hover {
+      transform: translateX(5px);
+      color: var(--accent);
+    }
+
+    .card li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #4caf50;
+      font-weight: 500;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .card li:hover::before {
+      transform: scale(1.3) rotate(360deg);
+      color: var(--accent-2);
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05);
+    }
+
+    /* CERTIFICATIONS STYLING */
+    .cert-card {
+      position: relative;
+      overflow: hidden;
+      border: 2px solid var(--accent) !important;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(96, 165, 250, 0.05)) !important;
+      transition: all 0.35s cubic-bezier(0.15, 0, 0.2, 1);
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: left 0.35s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(96, 165, 250, 0.08)) !important;
+    }
+
+    .cert-card:hover::before {
+      left: 100%;
+    }
+
+    .cert-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      animation: iconFloat 0.6s ease-out;
+    }
+
+    @keyframes iconFloat {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cert-card h3 {
+      color: var(--accent-2) !important;
+      font-weight: 500;
+      margin: 1rem 0 0.8rem 0;
+      letter-spacing: 0.3px;
+    }
+
+    .cert-card ul li::before {
+      content: '★';
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .cert-card:hover h3 {
+      text-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+    }
+
+    /* Centered Message Box + Glowing CTA */
+    .message-box {
+      display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .message-box textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 120px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      resize: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #e6eef8;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.02);
+      transition: all 0.3s ease;
+    }
+
+    .message-box textarea:focus {
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.155), inset 0 0 15px rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+    }
+
+    .message-box textarea::placeholder {
+      color: #aab6d3;
+    }
+
+    /* Send Message Button — same CTA style */
+    #sendMsgBtn {
+      margin-top: 14px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #36c0f7, #1e90ff);
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.15px;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hover shimmer + glow */
+    #sendMsgBtn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 40px rgba(30, 144, 255, 0.15);
+    }
+
+    #sendMsgBtn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.25) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-20deg);
+      transition: left 0.8s ease;
+    }
+
+    #sendMsgBtn:hover::before {
+      left: 130%;
+    }
+
+    /* Icon glow animation */
+    #sendMsgBtn .icon svg {
+      stroke: #fff;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease, stroke 0.3s ease;
+    }
+
+    #sendMsgBtn:hover .icon svg {
+      transform: scale(1.2) rotate(5deg);
+      stroke: #f8fbff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .message-box textarea {
+        width: 90%;
+      }
+    }
+
+
+
+    /* CONTACT CTA BUTTONS — Gradient + Glow */
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .contact-buttons .btn {
-      width: 85%;
-      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3acdf8, #1e90ff);
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.15px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(30, 144, 255, 0.25);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-  }
-        /* floating CTAs */
-        /* #hireMe { position:fixed; bottom:90px; right:30px; z-index:1400; padding:12px 18px; border-radius:50px; font-weight:700; color:#021124; cursor:pointer; outline:none; border:none; }
+
+    /* No underline hover */
+    .contact-buttons .btn::after {
+      display: none;
+    }
+
+    /* Hover glow effect */
+    .contact-buttons .btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.55), 0 0 40px rgba(30, 144, 255, 0.35);
+    }
+
+    /* Subtle animated shimmer glow */
+    .contact-buttons .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-20deg);
+      transition: left 0.8s ease;
+    }
+
+    .contact-buttons .btn:hover::before {
+      left: 130%;
+    }
+
+    /* SVG ICONS */
+    .contact-buttons .btn .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-buttons svg {
+      stroke: #fff;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease, stroke 0.3s ease;
+    }
+
+    .contact-buttons .btn:hover svg {
+      transform: scale(1.2) rotate(5deg);
+      stroke: #f8fbff;
+    }
+
+    /* Message Box CTA Glow */
+    .message-box .btn {
+      margin-top: 12px;
+      background: linear-gradient(135deg, #3acdf8, #1e90ff);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .message-box .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .contact-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-buttons .btn {
+        width: 85%;
+        text-align: center;
+      }
+    }
+
+    /* floating CTAs */
+    /* #hireMe { position:fixed; bottom:90px; right:30px; z-index:1400; padding:12px 18px; border-radius:50px; font-weight:500; color:#021124; cursor:pointer; outline:none; border:none; }
         #backToTop { position:fixed; bottom:30px; right:30px; z-index:1400; display:none; border:none; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#021124; width:44px; height:44px; border-radius:50%; cursor:pointer; } */
 
-        /* rotating gradient border for hireMe (using pseudo element) */
-        /* #hireMe { background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:2px solid transparent; }
+    /* rotating gradient border for hireMe (using pseudo element) */
+    /* #hireMe { background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:2px solid transparent; }
         #hireMe::before {
           content:''; position:absolute; inset:0; border-radius:50px; padding:2px;
           background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent));
           -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor; mask-composite: exclude;
-          animation:rotateGradient 4s linear infinite; pointer-events:none;
+          animation:rotateGradient 6s linear infinite; pointer-events:none;
         } */
 
-  /* 🌟 Floating "Hire Me" CTA — Enhanced Glow + Animation */
-  /* 🚀 Floating "Hire Me" CTA — Soft Glow Version */
-  #hireMe {
-    position: fixed;
-    bottom: 90px;
-    right: 30px;
-    z-index: 1500;
-    padding: 14px 28px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: linear-gradient(135deg, #32b8ec, #1d78ff);
-    box-shadow:
-      0 0 18px rgba(6, 182, 212, 0.3),
-      0 0 36px rgba(30, 144, 255, 0.25);
-    animation: softPulse 3.8s ease-in-out infinite;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-
-  /* Gentle breathing glow */
-  @keyframes softPulse {
-    0%, 100% {
+    /* 🌟 Floating "Hire Me" CTA — Enhanced Glow + Animation */
+    /* 🚀 Floating "Hire Me" CTA — Soft Glow Version */
+    #hireMe {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 1500;
+      padding: 14px 28px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: linear-gradient(135deg, #32b8ec, #1d78ff);
       box-shadow:
-        0 0 16px rgba(6, 182, 212, 0.25),
-        0 0 40px rgba(30, 144, 255, 0.2);
-      transform: scale(1);
+        0 0 18px rgba(6, 182, 212, 0.3),
+        0 0 36px rgba(30, 144, 255, 0.25);
+      animation: softPulse 3.8s ease-in-out infinite;
+      transition: all 0.3s ease;
+      overflow: hidden;
     }
-    50% {
+
+    /* Gentle breathing glow */
+    @keyframes softPulse {
+
+      0%,
+      100% {
+        box-shadow:
+          0 0 16px rgba(6, 182, 212, 0.25),
+          0 0 40px rgba(30, 144, 255, 0.2);
+        transform: scale(1);
+      }
+
+      50% {
+        box-shadow:
+          0 0 24px rgba(6, 182, 212, 0.155),
+          0 0 60px rgba(30, 144, 255, 0.35);
+        transform: scale(1.03);
+      }
+    }
+
+    /* Subtle rotating halo */
+    #hireMe::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 60px;
+      background: conic-gradient(from 0deg,
+          rgba(6, 182, 212, 0.15),
+          rgba(30, 144, 255, 0.15),
+          rgba(6, 182, 212, 0.15));
+      z-index: -1;
+      animation: haloSpin 8s linear infinite;
+      filter: blur(8px);
+      opacity: 0.15;
+    }
+
+    @keyframes haloSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hover — gentle lift with glow boost */
+    #hireMe:hover {
+      transform: translateY(-4px) scale(1.05);
+      background: linear-gradient(135deg, #38c4f4, #288dff);
       box-shadow:
-        0 0 24px rgba(6, 182, 212, 0.45),
-        0 0 60px rgba(30, 144, 255, 0.35);
-      transform: scale(1.03);
+        0 0 25px rgba(6, 182, 212, 0.5),
+        0 0 55px rgba(30, 144, 255, 0.35);
     }
-  }
 
-  /* Subtle rotating halo */
-  #hireMe::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: 60px;
-    background: conic-gradient(
-      from 0deg,
-      rgba(6, 182, 212, 0.4),
-      rgba(30, 144, 255, 0.4),
-      rgba(6, 182, 212, 0.4)
-    );
-    z-index: -1;
-    animation: haloSpin 8s linear infinite;
-    filter: blur(8px);
-    opacity: 0.4;
-  }
+    /* Pressed */
+    #hireMe:active {
+      transform: scale(0.97);
+    }
 
-  @keyframes haloSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    /* Soft text shimmer */
+    #hireMe::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.25) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-20deg);
+      transition: left 0.8s ease;
+    }
 
-  /* Hover — gentle lift with glow boost */
-  #hireMe:hover {
-    transform: translateY(-4px) scale(1.05);
-    background: linear-gradient(135deg, #38c4f4, #288dff);
-    box-shadow:
-      0 0 25px rgba(6, 182, 212, 0.5),
-      0 0 55px rgba(30, 144, 255, 0.35);
-  }
-
-  /* Pressed */
-  #hireMe:active {
-    transform: scale(0.97);
-  }
-
-  /* Soft text shimmer */
-  #hireMe::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-20deg);
-    transition: left 0.8s ease;
-  }
-
-  #hireMe:hover::after {
-    left: 130%;
-  }
+    #hireMe:hover::after {
+      left: 130%;
+    }
 
 
-  #backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 32px;
-    border: none;
-    background: linear-gradient(135deg, #3acdf8, #1e90ff);
-    color: #fff;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
-    transition: all 0.3s ease;
-    z-index: 1490;
-  }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 32px;
+      border: none;
+      background: linear-gradient(135deg, #3acdf8, #1e90ff);
+      color: #fff;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+      transition: all 0.3s ease;
+      z-index: 1490;
+    }
 
-  #backToTop:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 0 25px rgba(6, 182, 212, 0.7),
-                0 0 50px rgba(30, 144, 255, 0.5);
-  }
-
-
-        @keyframes rotateGradient { from{ background-position:0% 50% } to{ background-position:100% 50% } }
-
-        /* social bar */
-        .social-bar {
-          position: fixed;
-          top: 40%;
-          left: 10px;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          z-index: 1300;
-        }
-
-        .social-bar a {
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
-          color: #021124;
-          box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
-          text-decoration: none;
-          opacity: 0;
-          transform: translateX(-40px);
-          transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-          animation: glowIn 0.9s forwards;
-          position: relative;
-          overflow: visible; /* CHANGED from hidden to visible */
-        }
-
-        .social-bar a:nth-child(1) {
-          animation-delay: 0.2s;
-        }
-
-        .social-bar a:nth-child(2) {
-          animation-delay: 0.36s;
-        }
-
-        .social-bar a:nth-child(3) {
-          animation-delay: 0.52s;
-        }
-
-        /* Shimmer effect on social buttons */
-        .social-bar a::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%);
-          transition: width 0.5s ease, height 0.5s ease;
-        }
-
-        .social-bar a:hover::before {
-          width: 200px;
-          height: 200px;
-        }
-
-        /* Tooltip styling - FIXED TO STAY VISIBLE */
-        .social-bar a::after {
-          content: attr(data-tooltip);
-          position: absolute;
-          left: 70px;
-          top: 50%;
-          transform: translateY(-50%);
-          background: linear-gradient(135deg, rgba(6, 182, 212, 0.95), rgba(96, 165, 250, 0.95));
-          color: #021124;
-          padding: 10px 16px;
-          border-radius: 6px;
-          font-size: 0.9rem;
-          font-weight: 700;
-          white-space: nowrap;
-          opacity: 0;
-          pointer-events: all; /* Allow interaction with tooltip */
-          transition: opacity 0.25s ease, transform 0.25s ease;
-          transform: translateY(-50%) translateX(-10px);
-          box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
-          letter-spacing: 0.3px;
-          z-index: 1400;
-          backdrop-filter: blur(8px);
-        }
-
-        /* Tooltip arrow */
-        .social-bar a::before-tooltip {
-          content: '';
-          position: absolute;
-          left: 65px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 0;
-          height: 0;
-          border-left: 8px solid rgba(6, 182, 212, 0.95);
-          border-top: 5px solid transparent;
-          border-bottom: 5px solid transparent;
-          opacity: 0;
-          transition: opacity 0.25s ease;
-          z-index: 1401;
-        }
-
-        /* Show tooltip on hover - PERSISTENT */
-        .social-bar a:hover::after {
-          opacity: 1;
-          transform: translateY(-50%) translateX(0);
-          pointer-events: auto;
-        }
-
-        .social-bar a:hover::before-tooltip {
-          opacity: 1;
-        }
-
-        /* Button hover state */
-        .social-bar a:hover {
-          transform: translateX(0) scale(1.15);
-          box-shadow: 
-            0 8px 35px rgba(6, 182, 212, 0.6),
-            0 0 20px rgba(96, 165, 250, 0.4),
-            inset 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Pulse effect on hover - SMOOTH */
-        .social-bar a:hover {
-          animation: socialPulse 0.6s ease;
-        }
-
-        @keyframes socialPulse {
-          0%, 100% { 
-            box-shadow: 0 8px 35px rgba(6, 182, 212, 0.6),
-                        0 0 20px rgba(96, 165, 250, 0.4); 
-          }
-          50% { 
-            box-shadow: 0 8px 45px rgba(6, 182, 212, 0.9),
-                        0 0 30px rgba(96, 165, 250, 0.6); 
-          }
-        }
-
-        /* SVG icon animation */
-        .social-bar a svg {
-          transition: all 0.3s ease;
-          filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
-        }
-
-        .social-bar a:hover svg {
-          transform: scale(1.2) rotate(8deg);
-          filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.3));
-        }
-
-        /* Animation entrance */
-        @keyframes glowIn {
-          from {
-            opacity: 0;
-            transform: translateX(-40px) scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-          }
-        }
+    #backToTop:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.7),
+        0 0 50px rgba(30, 144, 255, 0.5);
+    }
 
 
-  /* ============================
+    @keyframes rotateGradient {
+      from {
+        background-position: 0% 50%
+      }
+
+      to {
+        background-position: 100% 50%
+      }
+    }
+
+    /* social bar */
+    .social-bar {
+      position: fixed;
+      top: 40%;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1300;
+    }
+
+    .social-bar a {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #021124;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+      text-decoration: none;
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: glowIn 0.9s forwards;
+      position: relative;
+      overflow: visible;
+      /* CHANGED from hidden to visible */
+    }
+
+    .social-bar a:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .social-bar a:nth-child(2) {
+      animation-delay: 0.36s;
+    }
+
+    .social-bar a:nth-child(3) {
+      animation-delay: 0.52s;
+    }
+
+    /* Shimmer effect on social buttons */
+    .social-bar a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+
+    .social-bar a:hover::before {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Tooltip styling - FIXED TO STAY VISIBLE */
+    .social-bar a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.95), rgba(96, 165, 250, 0.95));
+      color: #021124;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: all;
+      /* Allow interaction with tooltip */
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      transform: translateY(-50%) translateX(-10px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+      letter-spacing: 0.3px;
+      z-index: 1400;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Tooltip arrow */
+    .social-bar a::before-tooltip {
+      content: '';
+      position: absolute;
+      left: 65px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid rgba(6, 182, 212, 0.95);
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      z-index: 1401;
+    }
+
+    /* Show tooltip on hover - PERSISTENT */
+    .social-bar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+      pointer-events: auto;
+    }
+
+    .social-bar a:hover::before-tooltip {
+      opacity: 1;
+    }
+
+    /* Button hover state */
+    .social-bar a:hover {
+      transform: translateX(0) scale(1.15);
+      box-shadow:
+        0 8px 35px rgba(6, 182, 212, 0.6),
+        0 0 20px rgba(96, 165, 250, 0.15),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Pulse effect on hover - SMOOTH */
+    .social-bar a:hover {
+      animation: socialPulse 0.6s ease;
+    }
+
+    @keyframes socialPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 35px rgba(6, 182, 212, 0.6),
+          0 0 20px rgba(96, 165, 250, 0.15);
+      }
+
+      50% {
+        box-shadow: 0 8px 45px rgba(6, 182, 212, 0.9),
+          0 0 30px rgba(96, 165, 250, 0.6);
+      }
+    }
+
+    /* SVG icon animation */
+    .social-bar a svg {
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+    }
+
+    .social-bar a:hover svg {
+      transform: scale(1.2) rotate(8deg);
+      filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.3));
+    }
+
+    /* Animation entrance */
+    @keyframes glowIn {
+      from {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+
+    /* ============================
     🎓 EDUCATION SECTION
   ============================ */
-  #education .education-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 25px;
-    position: relative;
-  }
+    #education .education-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 25px;
+      position: relative;
+    }
 
-  /* Vertical timeline line */
-  #education .education-grid::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
-    animation: timelineGrowEdu 1.2s ease-out forwards;
-    opacity: 0.8;
-  }
+    /* Vertical timeline line */
+    #education .education-grid::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+      animation: timelineGrowEdu 1.2s ease-out forwards;
+      opacity: 0.8;
+    }
 
-  @keyframes timelineGrowEdu {
-    from { height: 0; opacity: 0; }
-    to { height: 100%; opacity: 1; }
-  }
+    @keyframes timelineGrowEdu {
+      from {
+        height: 0;
+        opacity: 0;
+      }
 
-  /* Education Cards (timeline style) */
-  .edu-card {
-    margin-left: 90px;
-    padding: 20px;
-    border-left: 3px solid var(--accent);
-    background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(96,165,250,0.05));
-    position: relative;
-    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-    border-radius: 10px !important;
-  }
+      to {
+        height: 100%;
+        opacity: 1;
+      }
+    }
 
-  /* Timeline Dots */
-  .edu-card::before {
-    content: '';
-    position: absolute;
-    left: -52px;
-    top: 20px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    border: 3px solid #071028;
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
-    transition: all 0.3s ease;
-  }
+    /* Education Cards (timeline style) */
+    .edu-card {
+      margin-left: 90px;
+      padding: 20px;
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(96, 165, 250, 0.05));
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border-radius: 10px !important;
+    }
 
-  .edu-card:hover::before {
-    transform: scale(1.4);
-    box-shadow: 0 0 35px rgba(6, 182, 212, 0.9), 0 0 55px rgba(96, 165, 250, 0.5);
-  }
+    /* Timeline Dots */
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      left: -52px;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 3px solid #071028;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+      transition: all 0.3s ease;
+    }
 
-  /* Hover Effects */
-  .edu-card:hover {
-    transform: translateX(12px);
-    border-left-color: var(--accent-2);
-    box-shadow: 
-      0 10px 35px rgba(6,182,212,0.25),
-      inset 0 0 20px rgba(6,182,212,0.08);
-  }
+    .edu-card:hover::before {
+      transform: scale(1.4);
+      box-shadow: 0 0 35px rgba(6, 182, 212, 0.9), 0 0 55px rgba(96, 165, 250, 0.5);
+    }
 
-  .edu-card h3 {
-    color: var(--accent-2);
-    font-weight: 700;
-    margin: 0 0 6px 0;
-    font-size: 1.25rem;
-  }
+    /* Hover Effects */
+    .edu-card:hover {
+      transform: translateX(12px);
+      border-left-color: var(--accent-2);
+      box-shadow:
+        0 10px 35px rgba(6, 182, 212, 0.25),
+        inset 0 0 20px rgba(6, 182, 212, 0.08);
+    }
 
-  .edu-card p {
-    margin: 6px 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-  }
+    .edu-card h3 {
+      color: var(--accent-2);
+      font-weight: 500;
+      margin: 0 0 6px 0;
+      font-size: 1.25rem;
+    }
 
-  /* Responsive Education Section */
-  @media (max-width: 768px) {
-    #education .education-grid::before { left: 20px; }
-    .edu-card { margin-left: 60px; }
-    .edu-card::before { left: -40px; }
-  }
+    .edu-card p {
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-  @media (max-width: 480px) {
-    #education .education-grid::before { left: 14px; }
-    .edu-card { margin-left: 38px; padding: 14px; }
-    .edu-card::before { left: -32px; width: 12px; height: 12px; }
-    .edu-card h3 { font-size: 1.05rem; }
-  }
+    /* Responsive Education Section */
+    @media (max-width: 768px) {
+      #education .education-grid::before {
+        left: 20px;
+      }
+
+      .edu-card {
+        margin-left: 60px;
+      }
+
+      .edu-card::before {
+        left: -40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #education .education-grid::before {
+        left: 14px;
+      }
+
+      .edu-card {
+        margin-left: 38px;
+        padding: 14px;
+      }
+
+      .edu-card::before {
+        left: -32px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .edu-card h3 {
+        font-size: 1.05rem;
+      }
+    }
 
 
 
 
 
-        /* ENHANCED EXPERIENCE SECTION WITH TIMELINE */
+    /* ENHANCED EXPERIENCE SECTION WITH TIMELINE */
     #experience .grid {
       display: flex;
       flex-direction: column;
@@ -1060,6 +1381,7 @@
         height: 0;
         opacity: 0;
       }
+
       to {
         height: 100%;
         opacity: 1;
@@ -1074,7 +1396,7 @@
       border-left: 3px solid var(--accent) !important;
       background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(96, 165, 250, 0.05)) !important;
       position: relative;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     /* Dot on timeline */
@@ -1100,8 +1422,8 @@
     #experience .card:hover {
       transform: translateX(10px);
       border-left-color: var(--accent-2) !important;
-      box-shadow: 
-        0 0 30px rgba(6, 182, 212, 0.4),
+      box-shadow:
+        0 0 30px rgba(6, 182, 212, 0.15),
         inset 0 0 20px rgba(6, 182, 212, 0.08),
         -8px 0 25px rgba(96, 165, 250, 0.2);
     }
@@ -1110,7 +1432,7 @@
       color: var(--accent-2);
       margin: 0 0 6px 0;
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1124,29 +1446,32 @@
       padding: 2px 8px;
       border-radius: 12px;
       font-size: 0.7rem;
-      font-weight: 700;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       animation: badgePulse 2s ease-in-out infinite;
     }
 
     @keyframes badgePulse {
-      0%, 100% { 
-        box-shadow: 0 0 8px rgba(6, 182, 212, 0.4); 
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(6, 182, 212, 0.15);
       }
-      50% { 
-        box-shadow: 0 0 16px rgba(6, 182, 212, 0.8); 
+
+      50% {
+        box-shadow: 0 0 16px rgba(6, 182, 212, 0.8);
       }
     }
 
-    #experience .card > p:first-of-type {
+    #experience .card>p:first-of-type {
       color: var(--accent);
       font-weight: 600;
       font-size: 0.95rem;
       margin: 6px 0;
     }
 
-    #experience .card > p:nth-of-type(2) {
+    #experience .card>p:nth-of-type(2) {
       color: var(--muted);
       font-size: 0.9rem;
       margin: 0 0 14px 0;
@@ -1260,7 +1585,7 @@
         font-size: 1rem;
       }
 
-      #experience .card > p:first-of-type {
+      #experience .card>p:first-of-type {
         font-size: 0.9rem;
       }
 
@@ -1291,7 +1616,7 @@
       padding: 24px !important;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: grid;
       grid-template-columns: 80px 1fr;
       gap: 20px;
@@ -1318,6 +1643,7 @@
         opacity: 0;
         transform: translateY(20px) scale(0.8);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1328,13 +1654,13 @@
       color: var(--accent-2);
       margin: 0;
       font-size: 1.3rem;
-      font-weight: 700;
+      font-weight: 500;
       grid-column: 2;
     }
 
     .project-card:hover h3 {
       color: var(--accent);
-      text-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+      text-shadow: 0 0 15px rgba(96, 165, 250, 0.15);
     }
 
     /* Project metadata */
@@ -1356,9 +1682,9 @@
     .project-section h4 {
       color: var(--accent);
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 500;
       margin: 14px 0 8px 0;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.15px;
       text-transform: uppercase;
     }
 
@@ -1438,7 +1764,7 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .project-card:hover::before {
@@ -1448,7 +1774,7 @@
     .project-card:hover {
       transform: translateX(8px);
       border-left-color: var(--accent-2) !important;
-      box-shadow: 
+      box-shadow:
         0 12px 40px rgba(6, 182, 212, 0.25),
         inset 0 0 20px rgba(6, 182, 212, 0.08);
     }
@@ -1553,7 +1879,7 @@
       z-index: 2000;
       opacity: 0;
       pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       backdrop-filter: blur(10px);
       box-shadow: 0 0 60px rgba(6, 182, 212, 0.3), 0 0 100px rgba(96, 165, 250, 0.2);
       max-width: 420px;
@@ -1573,9 +1899,11 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.6) rotateY(-10deg);
       }
+
       50% {
         transform: translate(-50%, -50%) scale(1.05) rotateY(5deg);
       }
+
       100% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1) rotateY(0deg);
@@ -1600,9 +1928,11 @@
         opacity: 0;
         transform: scale(0) rotate(-180deg);
       }
+
       50% {
         transform: scale(1.1) rotate(10deg);
       }
+
       100% {
         opacity: 1;
         transform: scale(1) rotate(0deg);
@@ -1613,7 +1943,7 @@
       color: var(--accent-2);
       font-size: 1.5rem;
       margin: 16px 0 10px 0;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 0.3px;
     }
 
@@ -1639,7 +1969,7 @@
       color: #021124;
       border: none;
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 500;
       border-radius: 8px;
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       position: relative;
@@ -1648,7 +1978,7 @@
 
     .modal-actions .btn:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.15);
     }
 
     .modal-actions .btn:active {
@@ -1664,514 +1994,584 @@
     }
 
     /* Tilt container hint */
-    .tiltable { perspective: 900px; }
+    .tiltable {
+      perspective: 900px;
+    }
 
     .tiltable .card {
       transform-origin: center center;
-      transition: transform 0.16s ease, box-shadow 0.24s ease;
+      transition: transform 0.16s ease, box-shadow 0.26s ease;
       will-change: transform;
     }
 
     /* hover fallback for touch / no-js */
     .tiltable .card:hover {
-      box-shadow: 0 14px 45px rgba(6,182,212,0.28), inset 0 0 12px rgba(255,255,255,0.02);
+      box-shadow: 0 14px 45px rgba(6, 182, 212, 0.28), inset 0 0 12px rgba(255, 255, 255, 0.02);
     }
-      </style>
-    </head>
-    <body>
-      <div id="scroll-progress"></div>
+  </style>
+</head>
 
-      <nav class="navbar">
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#education">Education</a>
-          <a href="#awards">Awards</a>
-          <a href="#contact">Contact</a>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- THEME TOGGLE -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero" role="banner">
+      <h1>Shubham Puri</h1>
+      <div class="role">Senior Software Test Engineer</div>
+      <div class="tagline">4 Years of Automation Excellence | ISTQB Certified | Team Leader</div>
+
+      <div class="hero-buttons" aria-hidden="false">
+        <a class="btn" href="mailto:spuri4867@gmail.com" title="Email">Email Me</a>
+        <a class="btn" href="tel:+917620231894" title="Call">Call Me</a>
+        <a class="btn" href="https://linkedin.com/in/shubhampuri07" target="_blank" rel="noopener"
+          title="LinkedIn">LinkedIn</a>
+        <a class="btn resume-btn" href="https://drive.google.com/file/d/1FCK7QsqJQ6yZKIPNaXXHgt55ohDtfUp6/view"
+          target="_blank" rel="noopener" title="View Resume">📄 View Resume</a>
+      </div>
+
+      <div class="scroll-chevron" title="Scroll to About" aria-hidden="false">▼</div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m an ISTQB-certified Senior Software Test Engineer with 4+ years of automation and manual testing experience
+        across Healthcare, Finance, and E-commerce domains. I build scalable automation frameworks (Java, Selenium
+        WebDriver, TestNG), integrate tests in CI/CD pipelines, and mentor junior engineers. Passionate about
+        accessibility, AI-driven testing, and reliable releases.</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Johnson Controls (via Jaytech)</h3>
+          <p><strong>QA Engineer</strong> | Sept 2025 - Present | Pune</p>
+          <ul>
+            <li>Contributing to enterprise-level quality assurance for building management systems</li>
+            <li>Developing automation scripts using Java, Selenium, and TestNG</li>
+            <li>Integrated Jenkins for CI/CD and improved release stability</li>
+            <li>Collaborating in Agile/DevOps environment for continuous improvement</li>
+            <li>Utilized BrowserStack for cross-browser testing</li>
+            <li>Conducting end-to-end functional and regression testing</li>
+
+          </ul>
         </div>
 
-        <!-- THEME TOGGLE -->
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme">
-          <span class="theme-icon">🌙</span>
+        <div class="card">
+          <h3>Perficient India</h3>
+          <p><strong>Automation Test Engineer</strong> | Nov 2023 - Sept 2025</p>
+          <ul>
+            <li>Led 5+ offshore QA engineers; improved efficiency by 40%</li>
+            <li>Built strong test automation framework using Java, Selenium WebDriver, TestNG, Maven, and Jenkins</li>
+            <li>Reduced regression efforts by up to 50%</li>
+            <li>Collaborated with cross-functional teams to ensure high-quality releases</li>
+            <li>Integrated automation into CI/CD pipelines, streamlining test execution</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Associate Technical Consultant</h3>
+          <p><strong>Perficient India</strong> | May 2022 - Nov 2023</p>
+          <ul>
+            <li>Developed foundational skills in automation and manual testing</li>
+            <li>Built automation frameworks using Java, Selenium WebDriver, TestNG</li>
+            <li>Supported Genentech & Caterpillar QA projects</li>
+            <li>Executed end-to-end testing for web applications</li>
+            <li>Enhanced release planning using Azure DevOps</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Automation Tools</h3>
+          <ul>
+            <li>Selenium</li>
+            <li>TestNG</li>
+            <li>Maven</li>
+            <li>Jenkins</li>
+            <li>ACCELQ</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Testing & CI/CD</h3>
+          <ul>
+            <li>Postman</li>
+            <li>JMeter</li>
+            <li>LambdaTest</li>
+            <li>Azure DevOps</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Frameworks & Domains</h3>
+          <ul>
+            <li>POM, Data-Driven, BDD, Hybrid</li>
+            <li>Healthcare, Finance, E-commerce</li>
+            <li>Accessibility & API Testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Key Projects & Client Work</h2>
+      <p style="text-align:center; color:var(--muted); margin-bottom:30px;">Delivering enterprise-level solutions across
+        Healthcare, E-commerce, and Building Management domains</p>
+
+      <div class="grid">
+
+        <div class="card project-card">
+          <div class="project-badge">🏢</div>
+          <h3>Johnson Controls Building Management Systems</h3>
+          <p class="project-meta">Enterprise Software | Sept 2025 - Present | QA Engineer</p>
+
+          <div class="project-section">
+            <h4>Key Achievements</h4>
+            <ul>
+              <li>200+ Test Cases (UI, API, Integration)</li>
+              <li>25% Improvement in release stability</li>
+              <li>Cross-Browser Compatibility testing</li>
+              <li>API Integration Validation (Postman)</li>
+            </ul>
+          </div>
+
+          <div class="project-section">
+            <h4>Technical Highlights</h4>
+            <ul>
+              <li>Conducting E2E functional & regression testing</li>
+              <li>Supporting automation framework & Playwright integration</li>
+              <li>Enhanced defect reporting (Azure DevOps)</li>
+              <li>Collaborating for early defect resolution</li>
+            </ul>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">Playwright</span>
+            <span class="tech-tag">BrowserStack</span>
+            <span class="tech-tag">Postman</span>
+            <span class="tech-tag">Jenkins</span>
+            <span class="tech-tag">Azure Devops</span>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <div class="project-badge">🏥</div>
+        <h3>Genentech Healthcare Platform</h3>
+        <p class="project-meta">Healthcare & Life Sciences | Mar 2023 - Aug 2025 | QA Automation Lead</p>
+
+        <div class="project-section">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Automated 150+ Test Cases (Large-Scale Automation)</li>
+            <li>Achieved 100% WCAG Compliance for 50+ web apps</li>
+            <li>30% Reduction in validation errors via automation</li>
+            <li>Tested 250+ Marketing Digital Assets</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4>Technical Highlights</h4>
+          <ul>
+            <li>Built automation framework using Java, Selenium, TestNG</li>
+            <li>Implemented BDD with Cucumber for collaboration</li>
+            <li>Streamlined cross-browser testing on 100+ pages</li>
+            <li>AI-driven test data generation reduced manual effort by 50%</li>
+          </ul>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Selenium</span>
+          <span class="tech-tag">TestNG</span>
+          <span class="tech-tag">BDD</span>
+          <span class="tech-tag">WCAG</span>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <div class="project-badge">🏗️</div>
+        <h3>Caterpillar Contract Management System</h3>
+        <p class="project-meta">Supply Chain & E-commerce | Aug 2022 - Feb 2023 | QA Automation Engineer</p>
+
+        <div class="project-section">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Designed & executed 300+ Test Cases</li>
+            <li>Achieved Defect-Free Releases (Zero Critical Bugs)</li>
+            <li>End-to-End testing across 10+ integrated modules</li>
+            <li>Supported Bi-weekly Production Releases</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4>Technical Highlights</h4>
+          <ul>
+            <li>Executed functional, non-functional, and integration tests</li>
+            <li>Managed tests using MS Azure DevOps</li>
+            <li>Comprehensive bug tracking & resolution workflows</li>
+            <li>Ensured strong test coverage for smooth releases</li>
+          </ul>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Selenium</span>
+          <span class="tech-tag">TestNG</span>
+          <span class="tech-tag">Azure DevOps</span>
+          <span class="tech-tag">JIRA</span>
+          <span class="tech-tag">API Testing</span>
+        </div>
+      </div>
+
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>🎓 Education & Qualifications</h2>
+
+      <div class="grid" style="margin-top:30px;">
+
+        <!-- B.E -->
+        <div class="card">
+          <h3>Bachelor of Engineering (B.E.)</h3>
+          <p><strong>Specialization:</strong> Mechanical Engineering</p>
+          <p>P. R. Pote (Patil) College of Engineering & Management, Amravati</p>
+          <p><em>August 2019 – July 2022</em></p>
+        </div>
+
+        <!-- Diploma -->
+        <div class="card">
+          <h3>Diploma in Engineering</h3>
+          <p><strong>Specialization:</strong> Mechanical Engineering</p>
+          <p>Maharashtra State Board of Technical Education (MSBTE)</p>
+          <p><em>June 2016 – July 2019</em></p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2>Certifications & Professional Development</h2>
+      <div class="grid">
+        <div class="card cert-card">
+          <h3>Core Testing & QA</h3>
+          <ul>
+            <li>ISTQB Certified Tester — Foundation Level</li>
+            <li>LambdaTest Automation Professional</li>
+            <li>ACCELQ Certified Automation Engineer</li>
+          </ul>
+        </div>
+        <div class="card cert-card">
+          <h3>API & Cloud</h3>
+          <ul>
+            <li>Postman API Testing Certification</li>
+            <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+          </ul>
+        </div>
+        <div class="card cert-card">
+          <h3>AI & Modern Development</h3>
+          <ul>
+            <li>AI Pair Programming with GitHub Copilot</li>
+            <li>Visual Studio Code for Web Developers</li>
+          </ul>
+        </div>
+        <div class="card cert-card">
+          <h3>Project Management</h3>
+          <ul>
+            <li>Scrum Foundation Professional Certificate</li>
+            <li>Jira Fundamentals Badge</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <h2>Awards & Recognition</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Q1 2023 - Colleague Recognition Award</h3>
+          <p>For impactful thought leadership and collaborative innovation.</p>
+        </div>
+        <div class="card">
+          <h3>Q3 2023 - Employee Appreciation Award</h3>
+          <p>For exceptional dedication driving project success.</p>
+        </div>
+        <div class="card">
+          <h3>Q4 2023 - Employee Performance Award</h3>
+          <p>For consistent excellence and meeting critical milestones.</p>
+        </div>
+        <div class="card">
+          <h3>Q1 2024 - Excellence in Innovation Award</h3>
+          <p>For leading process improvements with measurable gains.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p style="text-align:center;color:var(--muted);">
+        Let's connect — open to roles and collaborations.
+      </p>
+
+      <div class="contact-buttons">
+        <a class="btn" href="mailto:spuri4867@gmail.com" title="Email Shubham">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16v16H4z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </span>
+          EMAIL SHUBHAM
+        </a>
+
+        <a class="btn" href="tel:+917620231894" title="Call or WhatsApp">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.44 12.44 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 7.16 7.16l1.27-1.27a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </span>
+          CALL / WHATSAPP
+        </a>
+      </div>
+
+
+      <div class="message-box">
+        <textarea id="messageText" placeholder="Write your message here..."></textarea><br>
+        <button class="btn" id="sendMsgBtn">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </span>
+          SEND MESSAGE
         </button>
-      </nav>
-
-      <div class="wrap">
-        <header class="hero" role="banner">
-          <h1>Shubham Puri</h1>
-          <div class="role">Senior Software Test Engineer</div>
-          <div class="tagline">4 Years of Automation Excellence | ISTQB Certified | Team Leader</div>
-
-          <div class="hero-buttons" aria-hidden="false">
-            <a class="btn" href="mailto:spuri4867@gmail.com" title="Email">Email Me</a>
-            <a class="btn" href="tel:+917620231894" title="Call">Call Me</a>
-            <a class="btn" href="https://linkedin.com/in/shubhampuri07" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a>
-            <a class="btn resume-btn" href="https://drive.google.com/file/d/1FCK7QsqJQ6yZKIPNaXXHgt55ohDtfUp6/view" target="_blank" rel="noopener" title="View Resume">📄 View Resume</a>
-          </div>
-
-          <div class="scroll-chevron" title="Scroll to About" aria-hidden="false">▼</div>
-        </header>
-
-        <!-- ABOUT -->
-        <section id="about">
-          <h2>About Me</h2>
-          <p>I’m an ISTQB-certified Senior Software Test Engineer with 4+ years of automation and manual testing experience across Healthcare, Finance, and E-commerce domains. I build scalable automation frameworks (Java, Selenium WebDriver, TestNG), integrate tests in CI/CD pipelines, and mentor junior engineers. Passionate about accessibility, AI-driven testing, and reliable releases.</p>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience">
-          <h2>Professional Experience</h2>
-          <div class="grid">
-            <div class="card">
-              <h3>Johnson Controls (via Jaytech)</h3>
-              <p><strong>QA Engineer</strong> | Sept 2025 - Present | Pune</p>
-              <ul>
-                <li>Contributing to enterprise-level quality assurance for building management systems</li>
-                <li>Developing automation scripts using Java, Selenium, and TestNG</li>
-                <li>Integrated Jenkins for CI/CD and improved release stability</li>
-                <li>Collaborating in Agile/DevOps environment for continuous improvement</li>
-                <li>Utilized BrowserStack for cross-browser testing</li>
-                <li>Conducting end-to-end functional and regression testing</li>
-
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>Perficient India</h3>
-              <p><strong>Automation Test Engineer</strong> | Nov 2023 - Sept 2025</p>
-              <ul>
-                <li>Led 5+ offshore QA engineers; improved efficiency by 40%</li>
-                <li>Built strong test automation framework using Java, Selenium WebDriver, TestNG, Maven, and Jenkins</li>
-                <li>Reduced regression efforts by up to 50%</li>
-                <li>Collaborated with cross-functional teams to ensure high-quality releases</li>
-                <li>Integrated automation into CI/CD pipelines, streamlining test execution</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>Associate Technical Consultant</h3>
-              <p><strong>Perficient India</strong> | May 2022 - Nov 2023</p>
-              <ul>
-                <li>Developed foundational skills in automation and manual testing</li>
-                <li>Built automation frameworks using Java, Selenium WebDriver, TestNG</li>
-                <li>Supported Genentech & Caterpillar QA projects</li>
-                <li>Executed end-to-end testing for web applications</li>
-                <li>Enhanced release planning using Azure DevOps</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills">
-          <h2>Technical Skills</h2>
-          <div class="grid">
-            <div class="card"><h3>Automation Tools</h3><ul><li>Selenium</li><li>TestNG</li><li>Maven</li><li>Jenkins</li><li>ACCELQ</li></ul></div>
-            <div class="card"><h3>Programming</h3><ul><li>Java</li><li>Python</li><li>JavaScript</li></ul></div>
-            <div class="card"><h3>Testing & CI/CD</h3><ul><li>Postman</li><li>JMeter</li><li>LambdaTest</li><li>Azure DevOps</li><li>GitHub</li></ul></div>
-            <div class="card"><h3>Frameworks & Domains</h3><ul><li>POM, Data-Driven, BDD, Hybrid</li><li>Healthcare, Finance, E-commerce</li><li>Accessibility & API Testing</li></ul></div>
-          </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects">
-          <h2>Key Projects & Client Work</h2>
-          <p style="text-align:center; color:var(--muted); margin-bottom:30px;">Delivering enterprise-level solutions across Healthcare, E-commerce, and Building Management domains</p>
-          
-          <div class="grid">
-
-            <div class="card project-card">
-              <div class="project-badge">🏢</div>
-              <h3>Johnson Controls Building Management Systems</h3>
-              <p class="project-meta">Enterprise Software | Sept 2025 - Present | QA Engineer</p>
-              
-              <div class="project-section">
-                <h4>Key Achievements</h4>
-                <ul>
-                  <li>200+ Test Cases (UI, API, Integration)</li>
-                  <li>25% Improvement in release stability</li>
-                  <li>Cross-Browser Compatibility testing</li>
-                  <li>API Integration Validation (Postman)</li>
-                </ul>
-              </div>
-
-              <div class="project-section">
-                <h4>Technical Highlights</h4>
-                <ul>
-                  <li>Conducting E2E functional & regression testing</li>
-                  <li>Supporting automation framework & Playwright integration</li>
-                  <li>Enhanced defect reporting (Azure DevOps)</li>
-                  <li>Collaborating for early defect resolution</li>
-                </ul>
-              </div>
-
-              <div class="tech-stack">
-                <span class="tech-tag">Selenium</span>
-                <span class="tech-tag">Playwright</span>
-                <span class="tech-tag">BrowserStack</span>
-                <span class="tech-tag">Postman</span>
-                <span class="tech-tag">Jenkins</span>
-                <span class="tech-tag">Azure Devops</span>
-
-              </div>
-            </div>
-          </div>
-
-            <div class="card project-card">
-              <div class="project-badge">🏥</div>
-              <h3>Genentech Healthcare Platform</h3>
-              <p class="project-meta">Healthcare & Life Sciences | Mar 2023 - Aug 2025 | QA Automation Lead</p>
-              
-              <div class="project-section">
-                <h4>Key Achievements</h4>
-                <ul>
-                  <li>Automated 150+ Test Cases (Large-Scale Automation)</li>
-                  <li>Achieved 100% WCAG Compliance for 50+ web apps</li>
-                  <li>30% Reduction in validation errors via automation</li>
-                  <li>Tested 250+ Marketing Digital Assets</li>
-                </ul>
-              </div>
-
-              <div class="project-section">
-                <h4>Technical Highlights</h4>
-                <ul>
-                  <li>Built automation framework using Java, Selenium, TestNG</li>
-                  <li>Implemented BDD with Cucumber for collaboration</li>
-                  <li>Streamlined cross-browser testing on 100+ pages</li>
-                  <li>AI-driven test data generation reduced manual effort by 50%</li>
-                </ul>
-              </div>
-
-              <div class="tech-stack">
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">Selenium</span>
-                <span class="tech-tag">TestNG</span>
-                <span class="tech-tag">BDD</span>
-                <span class="tech-tag">WCAG</span>
-              </div>
-            </div>
-
-            <div class="card project-card">
-              <div class="project-badge">🏗️</div>
-              <h3>Caterpillar Contract Management System</h3>
-              <p class="project-meta">Supply Chain & E-commerce | Aug 2022 - Feb 2023 | QA Automation Engineer</p>
-              
-              <div class="project-section">
-                <h4>Key Achievements</h4>
-                <ul>
-                  <li>Designed & executed 300+ Test Cases</li>
-                  <li>Achieved Defect-Free Releases (Zero Critical Bugs)</li>
-                  <li>End-to-End testing across 10+ integrated modules</li>
-                  <li>Supported Bi-weekly Production Releases</li>
-                </ul>
-              </div>
-
-              <div class="project-section">
-                <h4>Technical Highlights</h4>
-                <ul>
-                  <li>Executed functional, non-functional, and integration tests</li>
-                  <li>Managed tests using MS Azure DevOps</li>
-                  <li>Comprehensive bug tracking & resolution workflows</li>
-                  <li>Ensured strong test coverage for smooth releases</li>
-                </ul>
-              </div>
-
-              <div class="tech-stack">
-                <span class="tech-tag">Selenium</span>
-                <span class="tech-tag">TestNG</span>
-                <span class="tech-tag">Azure DevOps</span>
-                <span class="tech-tag">JIRA</span>
-                <span class="tech-tag">API Testing</span>
-              </div>
-            </div>
-
-
-        </section>
-
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>🎓 Education & Qualifications</h2>
-
-    <div class="grid" style="margin-top:30px;">
-
-      <!-- B.E -->
-      <div class="card">
-        <h3>Bachelor of Engineering (B.E.)</h3>
-        <p><strong>Specialization:</strong> Mechanical Engineering</p>
-        <p>P. R. Pote (Patil) College of Engineering & Management, Amravati</p>
-        <p><em>August 2019 – July 2022</em></p>
       </div>
-
-      <!-- Diploma -->
-      <div class="card">
-        <h3>Diploma in Engineering</h3>
-        <p><strong>Specialization:</strong> Mechanical Engineering</p>
-        <p>Maharashtra State Board of Technical Education (MSBTE)</p>
-        <p><em>June 2016 – July 2019</em></p>
-      </div>
-
-    </div>
-  </section>
-
-
-
-        <!-- CERTIFICATIONS -->
-        <section id="certifications">
-          <h2>Certifications & Professional Development</h2>
-          <div class="grid">
-            <div class="card cert-card">
-              <h3>Core Testing & QA</h3>
-              <ul>
-                <li>ISTQB Certified Tester — Foundation Level</li>
-                <li>LambdaTest Automation Professional</li>
-                <li>ACCELQ Certified Automation Engineer</li>
-              </ul>
-            </div>
-            <div class="card cert-card">
-              <h3>API & Cloud</h3>
-              <ul>
-                <li>Postman API Testing Certification</li>
-                <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
-              </ul>
-            </div>
-            <div class="card cert-card">
-              <h3>AI & Modern Development</h3>
-              <ul>
-                <li>AI Pair Programming with GitHub Copilot</li>
-                <li>Visual Studio Code for Web Developers</li>
-              </ul>
-            </div>
-            <div class="card cert-card">
-              <h3>Project Management</h3>
-              <ul>
-                <li>Scrum Foundation Professional Certificate</li>
-                <li>Jira Fundamentals Badge</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- AWARDS -->
-        <section id="awards">
-          <h2>Awards & Recognition</h2>
-          <div class="grid">
-            <div class="card"><h3>Q1 2023 - Colleague Recognition Award</h3><p>For impactful thought leadership and collaborative innovation.</p></div>
-            <div class="card"><h3>Q3 2023 - Employee Appreciation Award</h3><p>For exceptional dedication driving project success.</p></div>
-            <div class="card"><h3>Q4 2023 - Employee Performance Award</h3><p>For consistent excellence and meeting critical milestones.</p></div>
-            <div class="card"><h3>Q1 2024 - Excellence in Innovation Award</h3><p>For leading process improvements with measurable gains.</p></div>
-          </div>
-        </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p style="text-align:center;color:var(--muted);">
-      Let's connect — open to roles and collaborations.
-    </p>
-
-    <div class="contact-buttons">
-      <a class="btn" href="mailto:spuri4867@gmail.com" title="Email Shubham">
-        <span class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </span>
-        EMAIL SHUBHAM
-      </a>
-
-      <a class="btn" href="tel:+917620231894" title="Call or WhatsApp">
-        <span class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.44 12.44 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 7.16 7.16l1.27-1.27a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </span>
-        CALL / WHATSAPP
-      </a>
-    </div>
-
-
-    <div class="message-box">
-      <textarea id="messageText" placeholder="Write your message here..."></textarea><br>
-      <button class="btn" id="sendMsgBtn">
-        <span class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </span>
-        SEND MESSAGE
-      </button>
-    </div>
-  </section>
-      </div>
+    </section>
+  </div>
 
   <!-- Floating CTA & Back-to-top -->
   <button id="hireMe" class="btn">🚀 Hire Me</button>
   <button id="backToTop" title="Back to Top">▲</button>
 
-      <!-- Social bar -->
-      <div class="social-bar" aria-hidden="false">
-        <a href="https://linkedin.com/in/shubhampuri07" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-          <!-- linkedin icon -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://github.com/ShubhamPuri-SDET" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <!-- github icon -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1C5.37 1 0 6.37 0 13a12 12 0 008.21 11.38c.6.1.82-.26.82-.58v-2.01c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.84 2.8 1.31 3.48 1.01.11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.23-3.23-.12-.3-.53-1.55.12-3.23 0 0 1.01-.33 3.31 1.24a11.48 11.48 0 016.02 0c2.3-1.57 3.31-1.24 3.31-1.24.65 1.68.24 2.93.12 3.23.77.85 1.23 1.92 1.23 3.23 0 4.62-2.8 5.63-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.58"/></svg>
-        </a>
-        <a href="https://blogs.perficient.com/author/spuri/" target="_blank" rel="noopener" title="Blog" aria-label="Blog">
-          <!-- blog icon -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v16h16V4H4zm4 4h8v8H8V8z"/></svg>
-        </a>
+  <!-- Social bar -->
+  <div class="social-bar" aria-hidden="false">
+    <a href="https://linkedin.com/in/shubhampuri07" target="_blank" rel="noopener" title="LinkedIn"
+      aria-label="LinkedIn">
+      <!-- linkedin icon -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    </a>
+    <a href="https://github.com/ShubhamPuri-SDET" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+      <!-- github icon -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 1C5.37 1 0 6.37 0 13a12 12 0 008.21 11.38c.6.1.82-.26.82-.58v-2.01c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.84 2.8 1.31 3.48 1.01.11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.23-3.23-.12-.3-.53-1.55.12-3.23 0 0 1.01-.33 3.31 1.24a11.48 11.48 0 016.02 0c2.3-1.57 3.31-1.24 3.31-1.24.65 1.68.24 2.93.12 3.23.77.85 1.23 1.92 1.23 3.23 0 4.62-2.8 5.63-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.58" />
+      </svg>
+    </a>
+    <a href="https://blogs.perficient.com/author/spuri/" target="_blank" rel="noopener" title="Blog" aria-label="Blog">
+      <!-- blog icon -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v16h16V4H4zm4 4h8v8H8V8z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Thank-you modal (no overlay) -->
+  <div class="modal" id="thankModal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="success-icon">✅</div>
+      <h3>Thanks for reaching out!</h3>
+      <p>Your message is on its way. I'll get back to you soon. ✨</p>
+      <div class="modal-actions">
+        <button class="btn" id="closeModal">Close</button>
       </div>
+    </div>
+  </div>
 
-      <!-- Thank-you modal (no overlay) -->
-      <div class="modal" id="thankModal" aria-hidden="true">
-        <div class="modal-content">
-          <div class="success-icon">✅</div>
-          <h3>Thanks for reaching out!</h3>
-          <p>Your message is on its way. I'll get back to you soon. ✨</p>
-          <div class="modal-actions">
-            <button class="btn" id="closeModal">Close</button>
-          </div>
-        </div>
-      </div>
+  <footer style="text-align:center; padding:28px 12px; color:var(--muted);">
+    © 2025 Shubham Puri • Senior Software Test Engineer • Pune, India
+  </footer>
 
-      <footer style="text-align:center; padding:28px 12px; color:var(--muted);">
-        © 2025 Shubham Puri • Senior Software Test Engineer • Pune, India
-      </footer>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          // IntersectionObserver: sections + h2 + card reveals
-          const sections = document.querySelectorAll('section');
-          const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // reveal child cards inside
-                const cards = entry.target.querySelectorAll('.card');
-                cards.forEach((c, i) => {
-                  setTimeout(() => c.classList.add('visible'), 120 * i);
-                });
-                // reveal h2
-                const h2 = entry.target.querySelector('h2');
-                if (h2) h2.classList.add('visible');
-              }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // IntersectionObserver: sections + h2 + card reveals
+      const sections = document.querySelectorAll('section');
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // reveal child cards inside
+            const cards = entry.target.querySelectorAll('.card');
+            cards.forEach((c, i) => {
+              setTimeout(() => c.classList.add('visible'), 120 * i);
             });
-          }, { threshold: 0.18 });
-          sections.forEach(s => sectionObserver.observe(s));
-
-          // Scroll progress bar
-          const progress = document.getElementById('scroll-progress');
-          window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const pct = docHeight ? (scrollTop / docHeight) * 100 : 0;
-            progress.style.width = pct + '%';
-          });
-
-          // Hero chevron scroll
-          const chevron = document.querySelector('.scroll-chevron');
-          if (chevron) chevron.addEventListener('click', () => {
-            const about = document.getElementById('about');
-            if (about) about.scrollIntoView({ behavior: 'smooth' });
-          });
-
-          // backToTop + hireMe logic
-          const backToTop = document.getElementById('backToTop');
-          const hireMe = document.getElementById('hireMe');
-          window.addEventListener('scroll', () => backToTop.style.display = window.scrollY > 420 ? 'block' : 'none');
-          backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-          hireMe.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
-
-          // Send message: validate -> open mailto -> show modal -> auto-close
-          const sendBtn = document.getElementById('sendMsgBtn');
-          const msgBox = document.getElementById('messageText');
-          const modal = document.getElementById('thankModal');
-          const closeModal = document.getElementById('closeModal');
-
-          if (sendBtn && msgBox) {
-            sendBtn.addEventListener('click', () => {
-              const msg = msgBox.value.trim();
-              if (!msg) {
-                alert('Please write a message before sending.');
-                msgBox.focus();
-                return;
-              }
-
-              // Show modal
-              modal.classList.add('show');
-              modal.setAttribute('aria-hidden', 'false');
-
-              // Open mail client with message prefilled (after 500ms delay for better UX)
-              setTimeout(() => {
-                const mailto = `mailto:spuri4867@gmail.com?subject=${encodeURIComponent('Portfolio Contact')}&body=${encodeURIComponent(msg)}`;
-                window.location.href = mailto;
-              }, 500);
-
-              // Clear message box
-              msgBox.value = '';
-            });
+            // reveal h2
+            const h2 = entry.target.querySelector('h2');
+            if (h2) h2.classList.add('visible');
           }
-
-          if (closeModal) {
-            closeModal.addEventListener('click', () => {
-              modal.classList.remove('show');
-              modal.setAttribute('aria-hidden','true');
-            });
-          }
-
-          // Social icons subtle float already via CSS; ensure they are visible (in case of slow animation)
-          const socials = document.querySelectorAll('.social-bar a');
-          socials.forEach((s, i) => {
-            s.style.animationDelay = (0.2 + i * 0.16) + 's';
-          });
-
-          // reveal hero buttons if not animated by CSS (fallback for some browsers)
-          const heroBtns = document.querySelectorAll('.hero-buttons .btn');
-          heroBtns.forEach((b, idx) => {
-            b.style.animationDelay = (0.9 + idx * 0.15) + 's';
-          });
         });
+      }, { threshold: 0.18 });
+      sections.forEach(s => sectionObserver.observe(s));
 
-        // THEME TOGGLE (localStorage persistence)
-          (function () {
-            const key = 'site-theme';
-            const btn = document.getElementById('themeToggle');
-            if (!btn) return;
+      // Scroll progress bar
+      const progress = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight ? (scrollTop / docHeight) * 100 : 0;
+        progress.style.width = pct + '%';
+      });
 
-            function applyTheme(theme) {
-              if (theme === 'light') {
-                document.body.classList.add('theme-light');
-                btn.setAttribute('aria-pressed', 'true');
-                btn.querySelector('.theme-icon').textContent = '🌞';
-              } else {
-                document.body.classList.remove('theme-light');
-                btn.setAttribute('aria-pressed', 'false');
-                btn.querySelector('.theme-icon').textContent = '🌙';
-              }
-              try { localStorage.setItem(key, theme); } catch (e) {}
-            }
+      // Hero chevron scroll
+      const chevron = document.querySelector('.scroll-chevron');
+      if (chevron) chevron.addEventListener('click', () => {
+        const about = document.getElementById('about');
+        if (about) about.scrollIntoView({ behavior: 'smooth' });
+      });
 
-            // init: saved -> prefers-color-scheme -> dark
-            let saved = null;
-            try { saved = localStorage.getItem(key); } catch (e) {}
-            if (!saved) {
-              const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-              saved = prefersLight ? 'light' : 'dark';
-            }
-            applyTheme(saved);
+      // backToTop + hireMe logic
+      const backToTop = document.getElementById('backToTop');
+      const hireMe = document.getElementById('hireMe');
+      window.addEventListener('scroll', () => backToTop.style.display = window.scrollY > 420 ? 'block' : 'none');
+      backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      hireMe.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
 
-            btn.addEventListener('click', () => {
-              const isLight = document.body.classList.contains('theme-light');
-              applyTheme(isLight ? 'dark' : 'light');
-              btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], { duration: 200, easing: 'ease-out' });
-            });
-          })();
-      </script>
-    </body>
-    </html><style>
+      // Send message: validate -> open mailto -> show modal -> auto-close
+      const sendBtn = document.getElementById('sendMsgBtn');
+      const msgBox = document.getElementById('messageText');
+      const modal = document.getElementById('thankModal');
+      const closeModal = document.getElementById('closeModal');
+
+      if (sendBtn && msgBox) {
+        sendBtn.addEventListener('click', () => {
+          const msg = msgBox.value.trim();
+          if (!msg) {
+            alert('Please write a message before sending.');
+            msgBox.focus();
+            return;
+          }
+
+          // Show modal
+          modal.classList.add('show');
+          modal.setAttribute('aria-hidden', 'false');
+
+          // Open mail client with message prefilled (after 500ms delay for better UX)
+          setTimeout(() => {
+            const mailto = `mailto:spuri4867@gmail.com?subject=${encodeURIComponent('Portfolio Contact')}&body=${encodeURIComponent(msg)}`;
+            window.location.href = mailto;
+          }, 500);
+
+          // Clear message box
+          msgBox.value = '';
+        });
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener('click', () => {
+          modal.classList.remove('show');
+          modal.setAttribute('aria-hidden', 'true');
+        });
+      }
+
+      // Social icons subtle float already via CSS; ensure they are visible (in case of slow animation)
+      const socials = document.querySelectorAll('.social-bar a');
+      socials.forEach((s, i) => {
+        s.style.animationDelay = (0.2 + i * 0.16) + 's';
+      });
+
+      // reveal hero buttons if not animated by CSS (fallback for some browsers)
+      const heroBtns = document.querySelectorAll('.hero-buttons .btn');
+      heroBtns.forEach((b, idx) => {
+        b.style.animationDelay = (0.9 + idx * 0.15) + 's';
+      });
+    });
+
+    // THEME TOGGLE (localStorage persistence)
+    (function () {
+      const key = 'site-theme';
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          document.body.classList.add('theme-light');
+          btn.setAttribute('aria-pressed', 'true');
+          btn.querySelector('.theme-icon').textContent = '🌞';
+        } else {
+          document.body.classList.remove('theme-light');
+          btn.setAttribute('aria-pressed', 'false');
+          btn.querySelector('.theme-icon').textContent = '🌙';
+        }
+        try { localStorage.setItem(key, theme); } catch (e) { }
+      }
+
+      // init: saved -> prefers-color-scheme -> dark
+      let saved = null;
+      try { saved = localStorage.getItem(key); } catch (e) { }
+      if (!saved) {
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        saved = prefersLight ? 'light' : 'dark';
+      }
+      applyTheme(saved);
+
+      btn.addEventListener('click', () => {
+        const isLight = document.body.classList.contains('theme-light');
+        applyTheme(isLight ? 'dark' : 'light');
+        btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], { duration: 200, easing: 'ease-out' });
+      });
+    })();
+  </script>
+</body>
+
+</html>
+<style>
