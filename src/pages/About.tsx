@@ -13,7 +13,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-background">
       <PageHeader
-        title="About InnovateX"
+        title="About CareerGrid"
         subtitle="We are a digital design and branding service provider helping businesses and individuals look professional and stand out. Our focus is on creativity, clarity, and results."
       />
 

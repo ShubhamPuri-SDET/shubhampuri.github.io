@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-gray-900 dark:text-white mb-4">
               <Briefcase className="h-7 w-7 text-primary-600" />
-              InnovateX
+              CareerGrid
             </Link>
             <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
               Your partner in digital excellence. We provide a suite of services to elevate your brand and career.
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-400">&copy; {new Date().getFullYear()} InnovateX Solutions. All rights reserved.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">&copy; {new Date().getFullYear()} CareerGrid Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>

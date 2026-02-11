@@ -135,7 +135,7 @@ export const TESTIMONIALS = [
     avatar: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
-    quote: "InnovateX provided top-notch printing services for our business cards and banners. The quality was outstanding and delivery was fast.",
+    quote: "CareerGrid provided top-notch printing services for our business cards and banners. The quality was outstanding and delivery was fast.",
     name: "Sunita Reddy",
     title: "Business Owner",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=150&q=80"

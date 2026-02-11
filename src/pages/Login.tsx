@@ -25,7 +25,7 @@ const Login: React.FC = () => {
         <div>
           <Link to="/" className="flex justify-center items-center gap-2 text-3xl font-bold text-gray-900 dark:text-white">
             <Briefcase className="h-8 w-8 text-primary-600" />
-            InnovateX
+            CareerGrid
           </Link>
           <h2 className="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Sign in to your client account

@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
       <div className="flex items-center justify-between h-20 px-6 border-b border-slate-200 dark:border-gray-800">
         <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-gray-900 dark:text-white">
             <Briefcase className="h-7 w-7 text-primary-600" />
-            InnovateX
+            CareerGrid
         </Link>
         <ThemeToggle />
       </div>

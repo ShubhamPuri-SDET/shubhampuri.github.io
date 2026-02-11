@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
         <header className="flex justify-between items-center p-4 border-b border-slate-200 dark:border-gray-800 lg:hidden">
             <div className="flex items-center gap-2 text-xl font-bold">
                 <Briefcase className="h-6 w-6 text-primary-600" />
-                InnovateX
+                CareerGrid
             </div>
             <ThemeToggle />
         </header>
