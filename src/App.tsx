@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
+import {
   SiSelenium, SiJavascript, SiPostman, SiGit, SiJira, SiJenkins, SiCucumber, SiMysql, SiGithub, SiGmail
 } from 'react-icons/si';
-import { 
-  HiCode, HiCog, HiAcademicCap, HiBadgeCheck, HiMail, 
+import {
+  HiCode, HiCog, HiAcademicCap, HiBadgeCheck, HiMail,
   HiPhone, HiLocationMarker, HiChevronDown, HiMenu, HiX, HiExternalLink,
   HiDownload, HiSparkles, HiShieldCheck, HiDatabase, HiGlobe, HiDeviceMobile
 } from 'react-icons/hi';
-import { 
+import {
   FaRocket, FaUsers, FaCheckCircle, FaCertificate, FaLaptopCode, FaServer, FaCloud, FaLinkedin, FaJava, FaBug
 } from 'react-icons/fa';
 
@@ -51,21 +51,21 @@ const SOCIAL_LINKS = [
 // Particle Background Component
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     const particles: Array<{
       x: number; y: number; vx: number; vy: number; size: number; opacity: number;
     }> = [];
-    
+
     for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -76,29 +76,29 @@ const ParticleBackground = () => {
         opacity: Math.random() * 0.5 + 0.2
       });
     }
-    
+
     const animate = () => {
       ctx.fillStyle = 'rgba(15, 23, 42, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach((p, i) => {
         p.x += p.vx;
         p.y += p.vy;
-        
+
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
         ctx.fill();
-        
+
         // Draw connections
         particles.slice(i + 1).forEach(p2 => {
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (dist < 150) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -108,21 +108,21 @@ const ParticleBackground = () => {
           }
         });
       });
-      
+
       requestAnimationFrame(animate);
     };
-    
+
     animate();
-    
+
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />;
 };
 
@@ -145,34 +145,34 @@ const FloatingOrbs = () => {
 // Automation Workflow Background - Subtle animated CI/CD pipeline flow
 const AutomationWorkflowBG = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight * 3; // Cover multiple sections
-    
+
     // Define automation workflow nodes (API, CI/CD, Browser, Database)
     const nodes: Array<{
       x: number; y: number; radius: number; color: string; label: string;
       pulsePhase: number; connections: number[];
     }> = [
-      { x: canvas.width * 0.15, y: canvas.height * 0.1, radius: 4, color: '#6366f1', label: 'API', pulsePhase: 0, connections: [1, 2] },
-      { x: canvas.width * 0.35, y: canvas.height * 0.08, radius: 3, color: '#22d3ee', label: 'CI/CD', pulsePhase: 1, connections: [2, 3] },
-      { x: canvas.width * 0.55, y: canvas.height * 0.12, radius: 4, color: '#a855f7', label: 'Browser', pulsePhase: 2, connections: [3, 4] },
-      { x: canvas.width * 0.75, y: canvas.height * 0.09, radius: 3, color: '#10b981', label: 'DB', pulsePhase: 0.5, connections: [4, 0] },
-      { x: canvas.width * 0.9, y: canvas.height * 0.11, radius: 4, color: '#f59e0b', label: 'Report', pulsePhase: 1.5, connections: [0] },
-    ];
+        { x: canvas.width * 0.15, y: canvas.height * 0.1, radius: 4, color: '#6366f1', label: 'API', pulsePhase: 0, connections: [1, 2] },
+        { x: canvas.width * 0.35, y: canvas.height * 0.08, radius: 3, color: '#22d3ee', label: 'CI/CD', pulsePhase: 1, connections: [2, 3] },
+        { x: canvas.width * 0.55, y: canvas.height * 0.12, radius: 4, color: '#a855f7', label: 'Browser', pulsePhase: 2, connections: [3, 4] },
+        { x: canvas.width * 0.75, y: canvas.height * 0.09, radius: 3, color: '#10b981', label: 'DB', pulsePhase: 0.5, connections: [4, 0] },
+        { x: canvas.width * 0.9, y: canvas.height * 0.11, radius: 4, color: '#f59e0b', label: 'Report', pulsePhase: 1.5, connections: [0] },
+      ];
 
     // Flowing dots along connections
     const flowDots: Array<{
       fromNode: number; toNode: number; progress: number; speed: number;
     }> = [];
-    
+
     nodes.forEach((node, nodeIdx) => {
       node.connections.forEach(toIdx => {
         flowDots.push({
@@ -186,9 +186,9 @@ const AutomationWorkflowBG = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       const time = Date.now() * 0.001;
-      
+
       // Draw connection lines
       nodes.forEach((node) => {
         node.connections.forEach(toIdx => {
@@ -201,60 +201,60 @@ const AutomationWorkflowBG = () => {
           ctx.stroke();
         });
       });
-      
+
       // Draw flowing dots along connections
       flowDots.forEach(dot => {
         dot.progress += dot.speed;
         if (dot.progress > 1) dot.progress = 0;
-        
+
         const from = nodes[dot.fromNode];
         const to = nodes[dot.toNode];
         const x = from.x + (to.x - from.x) * dot.progress;
         const y = from.y + (to.y - from.y) * dot.progress;
-        
+
         ctx.beginPath();
         ctx.arc(x, y, 1.5, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(34, 211, 238, ${0.3 + Math.sin(time * 2) * 0.15})`;
         ctx.fill();
       });
-      
+
       // Draw nodes with pulse effect
       nodes.forEach((node) => {
         const pulse = 1 + Math.sin(time * 2 + node.pulsePhase) * 0.3;
-        
+
         // Outer glow
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius * pulse * 3, 0, Math.PI * 2);
         ctx.fillStyle = `${node.color}10`;
         ctx.fill();
-        
+
         // Inner node
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius * pulse, 0, Math.PI * 2);
         ctx.fillStyle = `${node.color}40`;
         ctx.fill();
-        
+
         // Core
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius * 0.5, 0, Math.PI * 2);
         ctx.fillStyle = `${node.color}80`;
         ctx.fill();
       });
-      
+
       requestAnimationFrame(animate);
     };
-    
+
     animate();
-    
+
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight * 3;
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-60" />;
 };
 
@@ -478,7 +478,7 @@ const QACodingRobot = ({ isTyping = false, emotion = 'debugging' }: { isTyping?:
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-2 h-6 bg-slate-600 rounded-full" style={{ transform: 'translateZ(-10px)' }}>
           <div className={`absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full ${emotion === 'angry' ? 'bg-red-500 shadow-[0_0_15px_#ef4444]' : 'animate-antenna'}`} />
         </div>
-        
+
         {/* Glowing Visor/Eyes */}
         <div className="w-20 h-8 bg-slate-950 rounded-xl flex items-center justify-around px-3 border border-indigo-500/30 overflow-hidden relative">
           {/* Eyes pattern */}
@@ -499,7 +499,7 @@ const QACodingRobot = ({ isTyping = false, emotion = 'debugging' }: { isTyping?:
             </>
           )}
         </div>
-        
+
         {/* Status indicator mouth */}
         {emotion === 'happy' ? (
           <div className="mt-2 w-8 h-2.5 border-b-2 border-green-400 rounded-full shadow-[0_2px_8px_rgba(74,222,128,0.4)]" />
@@ -549,27 +549,26 @@ const Navigation = ({ activeSection }: { activeSection: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
-  
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const scrollToSection = (item: string) => {
     const element = document.getElementById(item);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsMobileMenuOpen(false);
   };
-  
+
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'glass py-4' : 'py-6 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'py-6 bg-transparent'
+        }`}
     >
       <motion.div
         className="absolute left-0 top-0 h-[2px] w-full origin-left bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-400"
@@ -579,7 +578,7 @@ const Navigation = ({ activeSection }: { activeSection: string }) => {
         <div className="flex items-center justify-between">
           {/* Left side: Logo & Subtitle Group */}
           <div className="flex items-center gap-4">
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05, rotateY: 15 }}
               className="text-2xl font-bold gradient-text-animated cursor-pointer"
               style={{ perspective: '500px' }}
@@ -591,48 +590,50 @@ const Navigation = ({ activeSection }: { activeSection: string }) => {
               Automation SDET
             </span>
           </div>
-          
+
           {/* Right side: Desktop Navigation & CTA Group */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item, index) => {
               const isActive = activeSection === item.id;
               return (
-              <motion.button
-                key={item.id}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-300 relative group ${
-                  isActive ? 'text-white drop-shadow-[0_0_10px_rgba(129,140,248,0.9)]' : 'text-slate-300 hover:text-white'
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.95)]" />}
-                  {item.label}
-                </span>
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300 ${isActive ? 'w-full shadow-[0_0_12px_rgba(168,85,247,0.9)]' : 'w-0 group-hover:w-full'}`} />
-              </motion.button>
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-medium transition-all duration-300 relative group ${isActive ? 'text-white drop-shadow-[0_0_10px_rgba(129,140,248,0.9)]' : 'text-slate-300 hover:text-white'
+                    }`}
+                >
+                  <span className="flex items-center gap-2">
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.95)]" />}
+                    {item.label}
+                  </span>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300 ${isActive ? 'w-full shadow-[0_0_12px_rgba(168,85,247,0.9)]' : 'w-0 group-hover:w-full'}`} />
+                </motion.button>
               );
             })}
-            <motion.button
+            <motion.a
+              href="https://drive.google.com/file/d/1WlNGvQDUyY1bX_0yn5COFzGCPTnTZWqu/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
+              className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 inline-block"
             >
               Download CV
-            </motion.button>
+            </motion.a>
           </div>
-          
+
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white text-2xl"
           >
             {isMobileMenuOpen ? <HiX /> : <HiMenu />}
           </button>
         </div>
-        
+
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
@@ -667,7 +668,7 @@ const HeroSection = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  
+
   const titles = [
     'Automation QA Engineer',
     'SDET Professional',
@@ -676,19 +677,19 @@ const HeroSection = () => {
     'Quality Champion'
   ];
   const [currentTitle, setCurrentTitle] = useState(0);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle((prev) => (prev + 1) % titles.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  
+
   return (
     <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Hero Gradient Background */}
       <div className="absolute inset-0 hero-gradient" />
-      
+
       <motion.div style={{ y, opacity }} className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-center lg:text-left">
@@ -701,8 +702,8 @@ const HeroSection = () => {
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-sm text-slate-300">Available for new opportunities</span>
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -711,8 +712,8 @@ const HeroSection = () => {
               Hi, I'm{' '}
               <span className="gradient-text-animated">Shubham Puri</span>
             </motion.h1>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -730,18 +731,18 @@ const HeroSection = () => {
                 </motion.p>
               </AnimatePresence>
             </motion.div>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-lg text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Crafting reliable, accessible, and scalable quality solutions with 3+ years of 
+              Crafting reliable, accessible, and scalable quality solutions with 3+ years of
               automation-first testing expertise across web, mobile, and API platforms.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -756,7 +757,10 @@ const HeroSection = () => {
                 <HiMail className="text-xl" />
                 Get In Touch
               </motion.button>
-              <motion.button
+              <motion.a
+                href="https://drive.google.com/file/d/1WlNGvQDUyY1bX_0yn5COFzGCPTnTZWqu/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -764,16 +768,16 @@ const HeroSection = () => {
               >
                 <HiDownload className="text-xl" />
                 Download CV
-              </motion.button>
+              </motion.a>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
               className="flex items-center gap-6 mt-8 justify-center lg:justify-start"
             >
-              <a href="https://www.linkedin.com/in/shubhampuri07" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.linkedin.com/in/shubhampuri07" target="_blank" rel="noopener noreferrer"
                 className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300">
                 <FaLinkedin className="text-xl" />
               </a>
@@ -787,9 +791,9 @@ const HeroSection = () => {
               </a>
             </motion.div>
           </div>
-          
+
           {/* Hero 3D QA Dashboard */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 1.2, delay: 0.5 }}
@@ -801,7 +805,7 @@ const HeroSection = () => {
               <div className="qa-float-1">
                 <QA3DCube />
               </div>
-              
+
               {/* Terminal & Badge Row */}
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <div className="qa-float-2">
@@ -813,25 +817,25 @@ const HeroSection = () => {
                   <BugCounter />
                 </div>
               </div>
-              
+
               {/* Floating Tech Icons - Enhanced */}
-              <motion.div 
+              <motion.div
                 animate={{ y: [-15, 15, -15], rotateZ: [0, 5, -5, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
                 className="absolute -top-8 -left-8 w-16 h-16 glass rounded-2xl flex items-center justify-center tilt-3d"
               >
                 <SiSelenium className="text-2xl text-blue-400" />
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ y: [10, -10, 10], rotateX: [0, 10, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
                 className="absolute -bottom-4 -right-4 w-16 h-16 glass rounded-2xl flex items-center justify-center tilt-3d"
               >
                 <SiPostman className="text-2xl text-orange-400" />
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ x: [-10, 10, -10], rotateY: [0, 15, -15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, delay: 0.5 }}
                 className="absolute top-1/4 -right-12 w-14 h-14 glass rounded-2xl flex items-center justify-center tilt-3d"
@@ -841,9 +845,9 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Stats Row */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
@@ -873,9 +877,9 @@ const HeroSection = () => {
           ))}
         </motion.div>
       </motion.div>
-      
+
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
@@ -897,14 +901,14 @@ const HeroSection = () => {
 // About Section
 const AboutSection = () => {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
-  
+
   const highlights = [
     { icon: FaRocket, title: 'Automation First', desc: 'Building scalable test frameworks' },
     { icon: HiShieldCheck, title: 'Quality Focused', desc: 'Reliability & accessibility champion' },
     { icon: FaUsers, title: 'Team Leadership', desc: 'Mentored 5+ QA engineers' },
     { icon: FaLaptopCode, title: 'CI/CD Expert', desc: 'Streamlined release pipelines' }
   ];
-  
+
   return (
     <section id="about" className="py-20 lg:py-32 relative">
       <div ref={ref} className="container mx-auto px-6">
@@ -922,7 +926,7 @@ const AboutSection = () => {
             Delivering automation-first quality solutions with a focus on reliability, accessibility, and release stability.
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -931,11 +935,11 @@ const AboutSection = () => {
           >
             <div className="space-y-6">
               <p className="text-lg text-slate-300 leading-relaxed">
-                ISTQB-certified Automation QA Engineer with <span className="text-indigo-400 font-semibold">3+ years of experience</span> 
+                ISTQB-certified Automation QA Engineer with <span className="text-indigo-400 font-semibold">3+ years of experience</span>
                 delivering automation-first quality solutions for web, mobile, and API-driven applications.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Strong in building <span className="text-purple-400 font-semibold">scalable test frameworks</span>, enabling CI/CD pipelines, 
+                Strong in building <span className="text-purple-400 font-semibold">scalable test frameworks</span>, enabling CI/CD pipelines,
                 and leveraging AI-driven testing with a focus on reliability, accessibility, and release stability.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
@@ -947,7 +951,7 @@ const AboutSection = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -985,7 +989,7 @@ const AboutSection = () => {
 // Experience Section
 const ExperienceSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  
+
   const experiences = [
     {
       company: 'Jaytech (Client: Johnson Controls)',
@@ -1017,7 +1021,7 @@ const ExperienceSection = () => {
       technologies: ['Java', 'Selenium', 'TestNG', 'Maven', 'Jenkins', 'Jira']
     }
   ];
-  
+
   return (
     <section id="experience" className="py-20 lg:py-32 relative bg-gradient-to-b from-transparent via-indigo-950/20 to-transparent">
       <div ref={ref} className="container mx-auto px-6">
@@ -1035,22 +1039,22 @@ const ExperienceSection = () => {
             Building quality solutions across enterprise domains including Healthcare, E-commerce, and Building Automation.
           </p>
         </motion.div>
-        
+
         <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.company}
-                initial={{ opacity: 0, y: 50, rotateX: -10 }}
-                animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                whileHover={{ scale: 1.02, rotateX: 2 }}
-                className="glass-deep glass-hover rounded-3xl p-8 relative overflow-hidden group tilt-3d neon-border"
-                style={{ perspective: '1200px' }}
-              >
-                {/* Gradient Accent with glow */}
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-500 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-500" />
-                <div className="absolute top-0 left-0 w-3 h-full bg-gradient-to-b from-indigo-500/20 to-purple-500/20 blur-sm group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
-              
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.company}
+              initial={{ opacity: 0, y: 50, rotateX: -10 }}
+              animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              whileHover={{ scale: 1.02, rotateX: 2 }}
+              className="glass-deep glass-hover rounded-3xl p-8 relative overflow-hidden group tilt-3d neon-border"
+              style={{ perspective: '1200px' }}
+            >
+              {/* Gradient Accent with glow */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-500 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-3 h-full bg-gradient-to-b from-indigo-500/20 to-purple-500/20 blur-sm group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
+
               {/* Current Badge */}
               {exp.current && (
                 <div className="absolute top-6 right-6">
@@ -1060,13 +1064,13 @@ const ExperienceSection = () => {
                   </span>
                 </div>
               )}
-              
+
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
                   <p className="text-indigo-400 font-medium mb-2">{exp.company}</p>
                   <p className="text-slate-400 text-sm mb-6">{exp.period}</p>
-                  
+
                   <ul className="space-y-3">
                     {exp.highlights.map((highlight, i) => (
                       <motion.li
@@ -1082,7 +1086,7 @@ const ExperienceSection = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="lg:w-48">
                   <p className="text-sm text-slate-500 mb-3 uppercase tracking-wider">Technologies</p>
                   <div className="flex flex-wrap gap-2">
@@ -1094,7 +1098,7 @@ const ExperienceSection = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Hover Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </motion.div>
@@ -1108,7 +1112,7 @@ const ExperienceSection = () => {
 // Skills Section
 const SkillsSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  
+
   const skillCategories = [
     {
       title: 'Programming & Automation',
@@ -1147,7 +1151,7 @@ const SkillsSection = () => {
       ]
     }
   ];
-  
+
   return (
     <section id="skills" className="py-20 lg:py-32 relative">
       <div ref={ref} className="container mx-auto px-6">
@@ -1165,7 +1169,7 @@ const SkillsSection = () => {
             Proficient in modern testing tools and methodologies, continuously learning and adapting to new technologies.
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-3 gap-8">
           {skillCategories.map((category, catIndex) => (
             <motion.div
@@ -1177,14 +1181,14 @@ const SkillsSection = () => {
             >
               {/* Subtle scan line effect */}
               <div className="scan-line" style={{ animationDelay: `${catIndex * 1}s`, opacity: 0.3 }} />
-            
+
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center depth-shadow">
                   <category.icon className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold">{category.title}</h3>
               </div>
-              
+
               <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
@@ -1215,7 +1219,7 @@ const SkillsSection = () => {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Additional Skills Cloud */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -1247,7 +1251,7 @@ const SkillsSection = () => {
 // Projects Section
 const ProjectsSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  
+
   const projects = [
     {
       title: 'Building Management Systems',
@@ -1278,7 +1282,7 @@ const ProjectsSection = () => {
       tags: ['Selenium', 'Java', 'Accessibility', 'Compliance', 'Analytics']
     }
   ];
-  
+
   return (
     <section id="projects" className="py-20 lg:py-32 relative bg-gradient-to-b from-transparent via-purple-950/20 to-transparent">
       <div ref={ref} className="container mx-auto px-6">
@@ -1296,7 +1300,7 @@ const ProjectsSection = () => {
             Delivering quality solutions across Healthcare, Building Automation, and Enterprise platforms.
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -1309,17 +1313,17 @@ const ProjectsSection = () => {
             >
               {/* Background Gradient */}
               <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${project.color} opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity duration-500`} />
-              
+
               {/* Icon */}
               <div className={`w-16 h-16 bg-gradient-to-br ${project.color} rounded-2xl flex items-center justify-center mb-6 depth-shadow group-hover:scale-110 transition-transform duration-300`}>
                 <project.icon className="text-2xl" />
               </div>
-              
+
               {/* Content */}
               <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
               <p className="text-indigo-400 font-medium mb-4">{project.company}</p>
               <p className="text-slate-400 mb-6">{project.description}</p>
-              
+
               <ul className="space-y-3 mb-6">
                 {project.highlights.map((highlight, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
@@ -1328,7 +1332,7 @@ const ProjectsSection = () => {
                   </li>
                 ))}
               </ul>
-              
+
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
@@ -1337,7 +1341,7 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              
+
               {/* Hover Line */}
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:w-full transition-all duration-500" />
             </motion.div>
@@ -1351,14 +1355,14 @@ const ProjectsSection = () => {
 // Hospital Icon Component (missing from react-icons)
 const FaHospital = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
   </svg>
 );
 
 // Certifications Section
 const CertificationsSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  
+
   const certifications = [
     { name: 'ISTQB Certified Tester', issuer: 'Foundation Level', icon: HiBadgeCheck, color: 'from-amber-500 to-orange-500' },
     { name: 'Scrum Foundation Professional', issuer: 'SFPC', icon: FaCertificate, color: 'from-blue-500 to-indigo-500' },
@@ -1366,7 +1370,7 @@ const CertificationsSection = () => {
     { name: 'LambdaTest Automation', issuer: 'Testing Certification', icon: FaRocket, color: 'from-purple-500 to-pink-500' },
     { name: 'Prompt Engineering', issuer: 'OpenAI', icon: HiSparkles, color: 'from-green-500 to-teal-500' }
   ];
-  
+
   return (
     <section id="certifications" className="py-20 lg:py-32 relative">
       <div ref={ref} className="container mx-auto px-6">
@@ -1384,7 +1388,7 @@ const CertificationsSection = () => {
             Continuously investing in professional development and industry certifications.
           </p>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: '1200px' }}>
           {certifications.map((cert, index) => (
             <motion.div
@@ -1407,7 +1411,7 @@ const CertificationsSection = () => {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Education */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -1443,7 +1447,7 @@ const QAPlaygroundSection = () => {
   const [testStatus, setTestStatus] = useState<'idle' | 'running' | 'passed' | 'failed'>('idle');
   const [activeTab, setActiveTab] = useState<'selenium' | 'playwright' | 'api'>('playwright');
   const [emotion, setEmotion] = useState<'happy' | 'angry' | 'debugging' | 'sleeping'>('debugging');
-  
+
   // Whack-A-Bug game states
   const [bugsSquashed, setBugsSquashed] = useState(0);
   const [activeBugIndex, setActiveBugIndex] = useState<number | null>(null);
@@ -1623,7 +1627,7 @@ const QAPlaygroundSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Block: 3D QACodingRobot & Emotion Controls (5 Columns) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <motion.div
@@ -1634,7 +1638,7 @@ const QAPlaygroundSection = () => {
               style={{ perspective: '1200px' }}
             >
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#0891b205_1px,transparent_1px),linear-gradient(to_bottom,#0891b205_1px,transparent_1px)] bg-[size:14px_24px]" />
-              
+
               {/* QA 3D Coding Robot */}
               <QACodingRobot isTyping={testStatus === 'running'} emotion={emotion} />
 
@@ -1688,11 +1692,10 @@ const QAPlaygroundSection = () => {
                       key={idx}
                       onClick={() => hasBug && handleSquashBug(idx)}
                       disabled={!hasBug}
-                      className={`h-16 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 ${
-                        hasBug
-                          ? 'bg-red-500/20 border-red-500 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:scale-105'
-                          : 'bg-slate-900/40 border-slate-800 text-slate-600 cursor-not-allowed'
-                      }`}
+                      className={`h-16 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 ${hasBug
+                        ? 'bg-red-500/20 border-red-500 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:scale-105'
+                        : 'bg-slate-900/40 border-slate-800 text-slate-600 cursor-not-allowed'
+                        }`}
                     >
                       {hasBug ? (
                         <>
@@ -1726,7 +1729,7 @@ const QAPlaygroundSection = () => {
 
           {/* Right Block: Live Code Inspector, Selector Finder & Gherkin Builder (7 Columns) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            
+
             {/* Mock Web Browser with DOM Finder Selector Overlay */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -1914,11 +1917,10 @@ const QAPlaygroundSection = () => {
                         ]);
                         setTestStatus('idle');
                       }}
-                      className={`px-3 py-1.5 rounded-xl text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 border ${
-                        activeTab === tab
-                          ? 'bg-gradient-to-r from-cyan-600 to-indigo-600 border-indigo-400 text-white shadow-[0_0_12px_rgba(6,182,212,0.3)]'
-                          : 'border-slate-800 text-slate-500 hover:text-white hover:border-slate-700'
-                      }`}
+                      className={`px-3 py-1.5 rounded-xl text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 border ${activeTab === tab
+                        ? 'bg-gradient-to-r from-cyan-600 to-indigo-600 border-indigo-400 text-white shadow-[0_0_12px_rgba(6,182,212,0.3)]'
+                        : 'border-slate-800 text-slate-500 hover:text-white hover:border-slate-700'
+                        }`}
                     >
                       {tab}
                     </button>
@@ -1956,20 +1958,20 @@ const QAPlaygroundSection = () => {
 const ContactSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('sending');
     setTimeout(() => setFormStatus('sent'), 2000);
   };
-  
+
   const contactInfo = [
     { icon: HiMail, label: 'Email', value: 'Spuri4867@gmail.com', href: 'mailto:Spuri4867@gmail.com' },
     { icon: HiPhone, label: 'Phone', value: '+91-7620231894', href: 'tel:+917620231894' },
     { icon: HiLocationMarker, label: 'Location', value: 'Pune, Maharashtra', href: '#' },
     { icon: FaLinkedin, label: 'LinkedIn', value: 'Connect', href: 'https://www.linkedin.com/in/shubhampuri07' }
   ];
-  
+
   return (
     <section id="contact" className="py-20 lg:py-32 relative bg-gradient-to-b from-transparent via-indigo-950/20 to-slate-950">
       <div ref={ref} className="container mx-auto px-6">
@@ -1987,7 +1989,7 @@ const ContactSection = () => {
             Open to new opportunities and exciting challenges. Feel free to reach out!
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <motion.div
@@ -2018,7 +2020,7 @@ const ContactSection = () => {
                 <HiExternalLink className="ml-auto text-slate-500 group-hover:text-indigo-400 transition-colors" />
               </motion.a>
             ))}
-            
+
             {/* Profiles */}
             <div className="pt-4">
               <p className="text-sm text-slate-500 mb-4 uppercase tracking-[0.25em]">Profiles</p>
@@ -2044,7 +2046,7 @@ const ContactSection = () => {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -2072,7 +2074,7 @@ const ContactSection = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-400">Subject</label>
                 <input
@@ -2082,7 +2084,7 @@ const ContactSection = () => {
                   placeholder="What's this about?"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-400">Message</label>
                 <textarea
@@ -2092,7 +2094,7 @@ const ContactSection = () => {
                   placeholder="Your message..."
                 />
               </div>
-              
+
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
@@ -2225,10 +2227,10 @@ export default function App() {
       <AutomationWorkflowBG />
       <FloatingOrbs />
       <ParallaxBlobs />
-      
+
       {/* Navigation */}
       <Navigation activeSection={activeSection} />
-      
+
       <main className="relative z-10">
         <HeroSection />
         <div className="section-divider" />
@@ -2246,7 +2248,7 @@ export default function App() {
         <div className="section-divider" />
         <ContactSection />
       </main>
-      
+
       <Footer />
       <ScrollToTopButton />
     </div>
