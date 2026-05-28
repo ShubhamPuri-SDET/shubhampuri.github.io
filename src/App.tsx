@@ -27,14 +27,14 @@ const NAV_ITEMS = [
 const SOCIAL_LINKS = [
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/shubhampuri07/',
     icon: FaLinkedin,
     accent: 'from-sky-500 to-blue-600',
     hover: 'hover:bg-blue-500/10 hover:border-blue-400/40',
   },
   {
     name: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/ShubhamPuri-SDET',
     icon: SiGithub,
     accent: 'from-slate-200 to-slate-500',
     hover: 'hover:bg-white/10 hover:border-white/20',
@@ -773,7 +773,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.2 }}
               className="flex items-center gap-6 mt-8 justify-center lg:justify-start"
             >
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.linkedin.com/in/shubhampuri07" target="_blank" rel="noopener noreferrer" 
                 className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300">
                 <FaLinkedin className="text-xl" />
               </a>
@@ -1967,7 +1967,7 @@ const ContactSection = () => {
     { icon: HiMail, label: 'Email', value: 'Spuri4867@gmail.com', href: 'mailto:Spuri4867@gmail.com' },
     { icon: HiPhone, label: 'Phone', value: '+91-7620231894', href: 'tel:+917620231894' },
     { icon: HiLocationMarker, label: 'Location', value: 'Pune, Maharashtra', href: '#' },
-    { icon: FaLinkedin, label: 'LinkedIn', value: 'Connect', href: 'https://linkedin.com' }
+    { icon: FaLinkedin, label: 'LinkedIn', value: 'Connect', href: 'https://www.linkedin.com/in/shubhampuri07' }
   ];
   
   return (
