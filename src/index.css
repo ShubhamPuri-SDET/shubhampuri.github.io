@@ -1,0 +1,697 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-950 text-white overflow-x-hidden;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.8), 0 0 60px rgba(139, 92, 246, 0.5);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes rotate-3d {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-inner {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-x 4s ease infinite;
+}
+
+/* Skill bar animation */
+.skill-bar {
+  position: relative;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+  transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Timeline */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #6366f1, #8b5cf6, transparent);
+  transform: translateX(-50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  border-radius: 4px;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+}
+
+/* Tilt card */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.3s ease-out;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Hero background gradient */
+.hero-gradient {
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
+}
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+}
+
+/* Nav logo divider */
+.nav-logo-divider {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+}
+
+/* QA 3D Rotating Cube */
+@keyframes cube-rotate {
+  0% { transform: rotateX(-25deg) rotateY(25deg); }
+  25% { transform: rotateX(-25deg) rotateY(115deg); }
+  50% { transform: rotateX(-25deg) rotateY(205deg); }
+  75% { transform: rotateX(-25deg) rotateY(295deg); }
+  100% { transform: rotateX(-25deg) rotateY(385deg); }
+}
+
+.cube-3d {
+  transform-style: preserve-3d;
+  animation: cube-rotate 12s ease-in-out infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+}
+
+/* QA Scan Line */
+@keyframes scan-line {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22d3ee, #6366f1, #22d3ee, transparent);
+  box-shadow: 0 0 20px #22d3ee, 0 0 40px #6366f1;
+  animation: scan-line 3s ease-in-out infinite;
+}
+
+/* Glitch text effect */
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 100% 0); }
+  20% { clip-path: inset(20% 0 40% 0); }
+  40% { clip-path: inset(40% 0 20% 0); }
+  60% { clip-path: inset(60% 0 10% 0); }
+  80% { clip-path: inset(80% 0 0% 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(100% 0 0 0); }
+  20% { clip-path: inset(0% 0 80% 0); }
+  40% { clip-path: inset(10% 0 60% 0); }
+  60% { clip-path: inset(30% 0 40% 0); }
+  80% { clip-path: inset(50% 0 20% 0); }
+}
+
+/* Pulse ring for QA shield */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Data stream effect */
+@keyframes data-stream {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Floating particles for QA */
+@keyframes qa-float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -20px) rotate(5deg); }
+  50% { transform: translate(-5px, -35px) rotate(-3deg); }
+  75% { transform: translate(15px, -15px) rotate(7deg); }
+}
+
+@keyframes qa-float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-15px, -10px) rotate(-5deg); }
+  50% { transform: translate(10px, -30px) rotate(4deg); }
+  75% { transform: translate(-10px, -20px) rotate(-7deg); }
+}
+
+.qa-float-1 { animation: qa-float-1 6s ease-in-out infinite; }
+.qa-float-2 { animation: qa-float-2 7s ease-in-out infinite; }
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Progress ring animation */
+@keyframes progress-ring {
+  0% { stroke-dashoffset: 283; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* 3D Robot Animations */
+@keyframes robot-levitate {
+  0%, 100% { transform: translateY(0px) rotateY(-5deg); }
+  50% { transform: translateY(-12px) rotateY(5deg); }
+}
+
+@keyframes arm-type-left {
+  0%, 100% { transform: rotateX(0deg) translateY(0); }
+  25% { transform: rotateX(15deg) translateY(-2px); }
+  50% { transform: rotateX(-5deg) translateY(1px); }
+  75% { transform: rotateX(10deg) translateY(-1px); }
+}
+
+@keyframes arm-type-right {
+  0%, 100% { transform: rotateX(0deg) translateY(0); }
+  30% { transform: rotateX(-10deg) translateY(2px); }
+  60% { transform: rotateX(12deg) translateY(-1px); }
+  90% { transform: rotateX(-15deg) translateY(1px); }
+}
+
+@keyframes antenna-pulse {
+  0%, 100% { background-color: #22d3ee; box-shadow: 0 0 15px #22d3ee; }
+  50% { background-color: #a855f7; box-shadow: 0 0 25px #a855f7; }
+}
+
+@keyframes eye-blink {
+  0%, 95%, 100% { transform: scaleY(1); }
+  97% { transform: scaleY(0.1); }
+}
+
+.animate-robot-levitate {
+  animation: robot-levitate 5s ease-in-out infinite;
+}
+
+.animate-arm-left {
+  animation: arm-type-left 0.4s ease-in-out infinite;
+}
+
+.animate-arm-right {
+  animation: arm-type-right 0.5s ease-in-out infinite;
+}
+
+.animate-antenna {
+  animation: antenna-pulse 2s ease-in-out infinite;
+}
+
+.animate-eye {
+  animation: eye-blink 4s infinite;
+}
+
+/* Hover 3D tilt enhanced */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99), box-shadow 0.4s ease;
+}
+
+.tilt-3d:hover {
+  transform: perspective(800px) rotateX(8deg) rotateY(-8deg) translateZ(20px);
+  box-shadow: 20px 20px 60px rgba(99, 102, 241, 0.3), -5px -5px 20px rgba(139, 92, 246, 0.2);
+}
+
+/* ============================================
+   ENHANCED FUTURISTIC QA AUTOMATION EFFECTS
+   ============================================ */
+
+/* 1. Automation Workflow Background */
+@keyframes workflow-dot {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+}
+
+@keyframes pipeline-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+.workflow-dot {
+  animation: workflow-dot 8s linear infinite;
+}
+
+.pipeline-flow {
+  animation: pipeline-flow 20s linear infinite;
+}
+
+.node-pulse {
+  animation: node-pulse 3s ease-in-out infinite;
+}
+
+/* 2. Enhanced Glassmorphism with Depth */
+.glass-deep {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-subtle {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-hover:hover {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 
+    0 12px 40px rgba(99, 102, 241, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* 3. Subtle Neon Glow Effects */
+.neon-border {
+  position: relative;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5), rgba(34, 211, 238, 0.5));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  filter: blur(8px);
+}
+
+.neon-border:hover::before {
+  opacity: 1;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+/* 4. Section Reveal Animations */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-up {
+  animation: reveal-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.reveal-scale {
+  animation: reveal-scale 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 5. Floating Gradient Blobs */
+@keyframes blob-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes blob-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.05); }
+  66% { transform: translate(25px, -40px) scale(0.95); }
+}
+
+@keyframes blob-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, 40px) scale(0.95); }
+  66% { transform: translate(-30px, -20px) scale(1.1); }
+}
+
+.blob-1 { animation: blob-float-1 20s ease-in-out infinite; }
+.blob-2 { animation: blob-float-2 25s ease-in-out infinite; }
+.blob-3 { animation: blob-float-3 22s ease-in-out infinite; }
+
+/* 6. Parallax Utilities */
+.parallax-slow {
+  will-change: transform;
+}
+
+.parallax-medium {
+  will-change: transform;
+}
+
+.parallax-fast {
+  will-change: transform;
+}
+
+/* 7. Dashboard-style Animations */
+@keyframes counter-increment {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+}
+
+.counter-animate {
+  animation: counter-increment 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 8. CI/CD Pipeline Flow Lines */
+@keyframes pipeline-dot {
+  0% { offset-distance: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+.pipeline-dot-flow {
+  animation: pipeline-dot 6s linear infinite;
+}
+
+/* 9. Subtle Grid Background */
+@keyframes grid-fade {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-fade 8s ease-in-out infinite;
+}
+
+/* 10. Smooth Card Entrance */
+@keyframes card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-entrance {
+  animation: card-entrance 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 11. API Node Connection Lines */
+@keyframes connection-pulse {
+  0% { stroke-dashoffset: 200; opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { stroke-dashoffset: 0; opacity: 0.3; }
+}
+
+.connection-pulse {
+  animation: connection-pulse 4s ease-in-out infinite;
+}
+
+/* 12. Browser Testing Flow */
+@keyframes browser-test {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.browser-test-flow {
+  animation: browser-test 5s ease-in-out infinite;
+}
+
+/* 13. Premium Depth Shadow */
+.depth-shadow {
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.15),
+    0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.depth-shadow-hover:hover {
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.15),
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 40px 80px rgba(99, 102, 241, 0.1);
+}
+
+/* 14. Smooth Scroll Indicator */
+@keyframes scroll-indicator {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+.scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+/* 15. Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
