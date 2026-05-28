@@ -935,8 +935,8 @@ const AboutSection = () => {
           >
             <div className="space-y-6">
               <p className="text-lg text-slate-300 leading-relaxed">
-                ISTQB-certified Automation QA Engineer with <span className="text-indigo-400 font-semibold">3+ years of experience</span>
-                delivering automation-first quality solutions for web, mobile, and API-driven applications.
+                ISTQB-certified Automation QA Engineer with <span className="text-indigo-400 font-semibold">4.1+ years of experience</span>
+                 delivering automation-first quality solutions for web, mobile, and API-driven applications.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
                 Strong in building <span className="text-purple-400 font-semibold">scalable test frameworks</span>, enabling CI/CD pipelines,
@@ -1003,7 +1003,7 @@ const ExperienceSection = () => {
         'Spearheaded migration from Selenium to Playwright',
         'Improved defect traceability through Azure DevOps'
       ],
-      technologies: ['Playwright', 'JavaScript', 'Postman', 'Azure DevOps', 'REST API']
+      technologies: ['Playwright', 'JavaScript', 'Python', 'CI/CD', 'GIT', 'Postman', 'Azure DevOps', 'REST API']
     },
     {
       company: 'Perficient India',
@@ -1018,7 +1018,7 @@ const ExperienceSection = () => {
         'Improved defect resolution rate by 90% across 300+ JIRA tickets',
         'Validated Adobe Analytics webVAS tags'
       ],
-      technologies: ['Java', 'Selenium', 'TestNG', 'Maven', 'Jenkins', 'Jira']
+      technologies: ['Java', 'Selenium', 'TestNG', 'Maven','BDD', 'Jenkins', 'SVN', 'Jira', 'Adobe Analytics'. 'Postman', 'REST API', 'Excel']
     }
   ];
 
