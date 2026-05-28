@@ -1018,7 +1018,7 @@ const ExperienceSection = () => {
         'Improved defect resolution rate by 90% across 300+ JIRA tickets',
         'Validated Adobe Analytics webVAS tags'
       ],
-      technologies: ['Java', 'Selenium', 'TestNG', 'Maven','BDD', 'Jenkins', 'SVN', 'Jira', 'Adobe Analytics'. 'Postman', 'REST API', 'Excel']
+      technologies: ['Java', 'Selenium', 'TestNG', 'Maven','BDD', 'Jenkins', 'SVN', 'Jira', 'Adobe Analytics', 'Postman', 'REST API', 'Excel']
     }
   ];
 
