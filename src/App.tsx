@@ -777,7 +777,7 @@ const HeroSection = () => {
                 className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300">
                 <FaLinkedin className="text-xl" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/ShubhamPuri-SDET" target="_blank" rel="noopener noreferrer"
                 className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300">
                 <SiGithub className="text-xl" />
               </a>
