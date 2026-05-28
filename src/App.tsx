@@ -1425,7 +1425,7 @@ const CertificationsSection = () => {
               <HiAcademicCap className="text-4xl text-indigo-400 mx-auto mb-3" />
               <h4 className="font-bold">Bachelor of Engineering</h4>
               <p className="text-slate-400">Sant Gadge Baba Amravati University</p>
-              <p className="text-sm text-slate-500 mt-1">2016 - 2019</p>
+              <p className="text-sm text-slate-500 mt-1">2019 - 2022</p>
             </div>
             <div className="hidden md:block w-px h-16 bg-slate-700" />
             <div className="text-center">
